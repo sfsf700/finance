@@ -59,3 +59,4 @@ MySQL 5.6.51
 ## Association
  belongs_to :user
  bas_one :finance
+
