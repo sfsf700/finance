@@ -1,0 +1,32 @@
+<div class="wrap-new-user">
+  <div class="page-header">
+    <div class="logo"><%= image_tag "f_logo.png", class: "app_logo" %></div>
+    <div class="create-account">
+      <h2 class="fs-60">Create Account</h2>
+    </div>
+  </div>
+
+
+  <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.label :name, class:"form-label fs-1" %><br />
+      <%= f.text_field :name , class:"form-control h-1" %>
+    </div>
+    <div class="field">
+      <%= f.label :email, class:"form-label fs-1" %><br />
+      <%= f.email_field :email, class:"form-control h-1" %>
+    </div>
+    <div class="field">
+      <%= f.label :"Password", class:"form-label fs-1" %><br />
+      <%= f.password_field :password, class:"form-control h-1", autocomplete: "off" %>
+    </div>
+    <div class="field">
+      <%= f.label :"Password(Confirmation)", class:"form-label fs-1" %><br />
+      <%= f.password_field :password_confirmation, class:"form-control h-1", autocomplete: "off" %>
+    </div>
+    <div class="d-grid gap-2 wrap-form-submit">
+      <%= f.submit "Sign up", class:"btn btn-primary bg-success border-success h-1" %>
+    </div>
+  <% end %>
+</div>

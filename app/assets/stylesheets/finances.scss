@@ -1,0 +1,57 @@
+// Place all the styles related to the finances controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.finance-regi {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  color: #fff;
+}
+
+.wrap-new {
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.wrap-form-contents {
+  margin: 50px 1rem;
+}
+
+.form-control.h-1 {
+  line-height: 4;
+}
+
+.form-control.h-2 {
+  line-height: 2;
+}
+
+.form-select.h-1 {
+  line-height: 4;
+}
+
+.btn.btn-primary.h-1 {
+  line-height: 4;
+  font-size: 30px;
+}
+
+.wrap-form-submit {
+  margin: 150px 0;
+}
+
+.fs-60 {
+  font-size: 60px;
+}
+
+.menu-wrap {
+  width: 100%;
+  border: 1px solid;
+  padding: 40px 20px;
+  background-color: #fff;
+  position: sticky;
+  top: 100vh;
+}
+
+.nav-link.gray {
+  color: dimgray;
+}

@@ -1,0 +1,35 @@
+.page-header {
+  margin: 3% 0;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.app_logo {
+  width: 20%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.create-account {
+  display: flex;
+  justify-content: center;
+  margin: 3% 0;
+  color: green;
+}
+
+.wrap-new-user {
+  padding: 20px;
+  height: 100vh;
+}
+
+.new_user {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.field {
+  margin-bottom: 50px;
+}
