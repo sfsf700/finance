@@ -1,0 +1,50 @@
+<div class="bg-success bg-gradient">
+  <div class="finance-regi fs-60">
+    設定
+  </div>
+</div>
+
+<div class="wrap-new">
+  <div class="row align-items-center">
+    <div class="col fs-48 mt-5 mb-4">機能設定
+    </div>
+    <a class="border-top border-dark setting-contents">
+      <div href="#" class="fs-1 ">カテゴリーの追加</div>
+    </a>
+    <a class="border-top border-bottom border-dark setting-contents">
+      <div class="fs-1">カラーテーマの変更</div>
+    </a>
+  </div>
+
+
+  <div class="row align-items-center">
+    <div class="col fs-48 mt-5 mb-4">アカウント設定</div>
+    <a class="border-top border-dark setting-contents">
+      <div href="#" class="fs-1 ">アドレス変更</div>
+    </a>
+    <a class="border-top border-dark setting-contents">
+      <div class="fs-1">パスワード変更</div>
+    </a>
+    <%= link_to destroy_user_session_path, method: :delete, class: "border-top border-bottom border-dark setting-contents fs-1" do%>
+      ログアウト
+    <% end %>
+
+  </div>
+</div>
+
+<footer class="menu-wrap">
+  <ul class="nav nav-fill">
+    <li class="nav-item">
+      <a class="nav-link gray" href="#"><i class="fa-solid fa-pen p-3 fs-60"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link gray" href="#"><i class="fa-regular fa-calendar-days p-3 fs-60"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link gray" href="#"><i class="fa-solid fa-database p-3 fs-60"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link gray" href="#"><i class="fa-solid fa-gear p-3 fs-60"></i></a>
+    </li>
+  </ul>
+</footer>

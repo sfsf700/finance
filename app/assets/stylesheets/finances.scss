@@ -44,14 +44,28 @@
 }
 
 .menu-wrap {
-  width: 100%;
-  border: 1px solid;
+  width: 93%;
+  margin: 3.5%;
   padding: 40px 20px;
+  border: none;
+  border-radius: 20px;
   background-color: #fff;
-  position: sticky;
-  top: 100vh;
+  position: fixed; /* fixed or sticky*/
+  bottom: 0;
 }
 
 .nav-link.gray {
   color: dimgray;
+}
+
+/* setting */
+
+.fs-48 {
+  font-size: 48px;
+}
+
+.setting-contents{
+  line-height: 5rem;
+  text-decoration: none;
+  color: black;
 }

@@ -11,19 +11,19 @@
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field">
       <%= f.label :name, class:"form-label fs-1" %><br />
-      <%= f.text_field :name , class:"form-control h-1" %>
+      <%= f.text_field :name , class:"form-control h-1" , maxlength: "20", required: true %>
     </div>
     <div class="field">
       <%= f.label :email, class:"form-label fs-1" %><br />
-      <%= f.email_field :email, class:"form-control h-1" %>
+      <%= f.email_field :email, class:"form-control h-1", required: true %>
     </div>
     <div class="field">
       <%= f.label :"Password", class:"form-label fs-1" %><br />
-      <%= f.password_field :password, class:"form-control h-1", autocomplete: "off" %>
+      <%= f.password_field :password, class:"form-control h-1", autocomplete: "off", required: true %>
     </div>
     <div class="field">
       <%= f.label :"Password(Confirmation)", class:"form-label fs-1" %><br />
-      <%= f.password_field :password_confirmation, class:"form-control h-1", autocomplete: "off" %>
+      <%= f.password_field :password_confirmation, class:"form-control h-1", autocomplete: "off", required: true %>
     </div>
     <div class="d-grid gap-2 wrap-form-submit">
       <%= f.submit "Sign up", class:"btn btn-primary bg-success border-success h-1" %>

@@ -3,4 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  with_options presence: true do 
+    validates :name
+  end
+
+  with_options allow_blank: true do
+    PASSWORD_REGEX = /\A(?=.*?[A-z])(?=.*?[\d])[A-z\d]+\z/i.freeze
+    validates :password, format: {with: PASSWORD_REGEX, message: "is invalid. Input half-width characters."}
+  end
+
 end
