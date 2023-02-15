@@ -1,0 +1,45 @@
+<div class="bg-success bg-gradient">
+  <div class="finance-regi fs-60">
+    ジャンル登録
+  </div>
+</div>
+
+<div class="wrap-new">
+  <%= form_with model: @genre, locla: true do |f| %>
+    <div class="wrap-form-contents">
+      <label for="formGroupExampleInput2" class="form-label fs-1">ジャンルの名前を入力</label>
+      <%= f.text_area :g_name, class: "form-control h-2", id: "formGroupExampleInput2" %>
+    </div>
+
+    <div class="wrap-form-contents">
+      <div class="d-flex justify-content-center">
+         <%= link_to '登録中ジャンル一覧', genres_path, class:"add-category fs-1" %>
+      </div>
+    </div>
+  
+    <div class="wrap-form-submit">
+      <div class="d-grid gap-2">
+        <input class="btn btn-primary h-1" type="submit" value="保存">
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+<footer class="menu-wrap">
+  <ul class="nav nav-fill">
+    <li class="nav-item">
+      <a class="nav-link gray" href="/"><i class="fa-solid fa-pen p-3 fs-60"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link gray" href="/finances"><i class="fa-regular fa-calendar-days p-3 fs-60"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link gray" href="#"><i class="fa-solid fa-database p-3 fs-60"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link gray" href="/setting"><i class="fa-solid fa-gear p-3 fs-60"></i></a>
+    </li>
+  </ul>
+</footer>

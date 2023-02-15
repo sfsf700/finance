@@ -32,15 +32,15 @@ MySQL 5.6.51
 
 
 ## Association
- has_many :finances
+ has_many :records
  has_many :genres
 
 
-## finances table
+## record table
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
-| price    | string     | null: false                    |
+| price    | integer    | null: false                    |
 | memo     | string     | null: false                    |
 | f_date   | time       | null: false                    |
 | genre_id | references | null: false                    |
@@ -58,5 +58,5 @@ MySQL 5.6.51
 
 ## Association
  belongs_to :user
- bas_one :finance
+ bas_one :record
 

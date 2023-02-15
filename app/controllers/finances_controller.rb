@@ -5,4 +5,8 @@ class FinancesController < ApplicationController
 
   def setting
   end
+
+  def index
+  end
+
 end

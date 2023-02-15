@@ -69,3 +69,58 @@
   text-decoration: none;
   color: black;
 }
+
+
+/* finance-index */
+
+.finance-total {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px 0;
+}
+
+.ceb {
+  margin: 0 auto;
+  width: 60%;
+  text-align: center;
+  border-right: 1px solid;
+  padding: 10px 0;
+}
+
+.price {
+  width: 50%;
+  text-align: end;
+  margin-right: 10%;
+  padding: 10px 0;
+}
+
+.finance-index {
+  background-color: #fff;
+  padding: 2rem;
+}
+
+.f-date {
+  width: 30%;
+}
+
+.f-price {
+  width: 40%;
+  text-align: end;
+}
+
+/* calender */
+
+.calendar-heading {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0;
+  font-size: 30px;
+}
+
+.table>:not(:last-child)>:last-child>* {
+  text-align: center;
+}
+
+.simple-calendar {
+  text-align: center;
+}

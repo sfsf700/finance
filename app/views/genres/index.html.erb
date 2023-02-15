@@ -1,0 +1,33 @@
+<div class="bg-success bg-gradient">
+  <div class="finance-regi fs-60">
+    ジャンル一覧
+  </div>
+</div>
+
+<div class="wrap-new">
+  <% @genres.each do |genre| %>
+    <div class="row align-items-center">
+      <div class= "border-bottom border-dark setting-contents fs-1">
+        <%= genre.g_name %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<footer class="menu-wrap">
+  <ul class="nav nav-fill">
+    <li class="nav-item">
+      <a class="nav-link gray" href="/"><i class="fa-solid fa-pen p-3 fs-60"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link gray" href="/finances"><i class="fa-regular fa-calendar-days p-3 fs-60"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link gray" href="#"><i class="fa-solid fa-database p-3 fs-60"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link gray" href="/setting"><i class="fa-solid fa-gear p-3 fs-60"></i></a>
+    </li>
+  </ul>
+</footer>

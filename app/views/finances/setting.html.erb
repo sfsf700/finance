@@ -8,12 +8,12 @@
   <div class="row align-items-center">
     <div class="col fs-48 mt-5 mb-4">機能設定
     </div>
-    <a class="border-top border-dark setting-contents">
-      <div href="#" class="fs-1 ">カテゴリーの追加</div>
-    </a>
-    <a class="border-top border-bottom border-dark setting-contents">
-      <div class="fs-1">カラーテーマの変更</div>
-    </a>
+    <%= link_to  new_genre_path ,class: "border-top border-dark setting-contents fs-1" do %>
+      ジャンルの追加
+    <% end %>
+    <%= link_to genres_path, class: "border-top border-bottom border-dark setting-contents fs-1" do %>
+      登録中ジャンルを確認する
+    <% end %>
   </div>
 
 
@@ -35,10 +35,10 @@
 <footer class="menu-wrap">
   <ul class="nav nav-fill">
     <li class="nav-item">
-      <a class="nav-link gray" href="#"><i class="fa-solid fa-pen p-3 fs-60"></i></a>
+      <a class="nav-link gray" href="/"><i class="fa-solid fa-pen p-3 fs-60"></i></a>
     </li>
     <li class="nav-item">
-      <a class="nav-link gray" href="#"><i class="fa-regular fa-calendar-days p-3 fs-60"></i></a>
+      <a class="nav-link gray" href="finances"><i class="fa-regular fa-calendar-days p-3 fs-60"></i></a>
     </li>
     <li class="nav-item">
       <a class="nav-link gray" href="#"><i class="fa-solid fa-database p-3 fs-60"></i></a>
