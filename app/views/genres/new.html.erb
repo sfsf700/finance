@@ -5,7 +5,7 @@
 </div>
 
 <div class="wrap-new">
-  <%= form_with model: @genre, locla: true do |f| %>
+  <%= form_with model: @genre, loclal: true do |f| %>
     <div class="wrap-form-contents">
       <label for="formGroupExampleInput2" class="form-label fs-1">ジャンルの名前を入力</label>
       <%= f.text_area :g_name, class: "form-control h-2", id: "formGroupExampleInput2" %>
@@ -27,19 +27,4 @@
 
 
 
-<footer class="menu-wrap">
-  <ul class="nav nav-fill">
-    <li class="nav-item">
-      <a class="nav-link gray" href="/"><i class="fa-solid fa-pen p-3 fs-60"></i></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link gray" href="/finances"><i class="fa-regular fa-calendar-days p-3 fs-60"></i></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link gray" href="#"><i class="fa-solid fa-database p-3 fs-60"></i></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link gray" href="/setting"><i class="fa-solid fa-gear p-3 fs-60"></i></a>
-    </li>
-  </ul>
-</footer>
+<%= render "shared/footer" %>

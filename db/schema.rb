@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_02_15_021917) do
+ActiveRecord::Schema.define(version: 2023_02_15_172352) do
 
   create_table "genres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "g_name", null: false
@@ -18,6 +18,19 @@ ActiveRecord::Schema.define(version: 2023_02_15_021917) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_genres_on_user_id"
+  end
+
+  create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "price", null: false
+    t.date "r_date", null: false
+    t.string "memo"
+    t.bigint "genre_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", null: false
+    t.index ["genre_id"], name: "index_records_on_genre_id"
+    t.index ["user_id"], name: "index_records_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -34,4 +47,6 @@ ActiveRecord::Schema.define(version: 2023_02_15_021917) do
   end
 
   add_foreign_key "genres", "users"
+  add_foreign_key "records", "genres"
+  add_foreign_key "records", "users"
 end

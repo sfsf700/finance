@@ -124,3 +124,23 @@
 .simple-calendar {
   text-align: center;
 }
+
+input#record_income_value1 {
+  display: none;
+}
+
+input#record_spending_value2 {
+  display: none;
+}
+
+.income {
+  color: green;
+}
+
+.spending {
+  color: white;
+}
+
+.spending-status {
+  color: red;
+}

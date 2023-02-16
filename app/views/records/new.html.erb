@@ -1,0 +1,52 @@
+<div class="bg-success bg-gradient">
+  <div class="finance-regi fs-60">
+    収支登録
+  </div>
+</div>
+
+<div class="wrap-new">
+  <%= form_with model: @record, id: 'finance_form', class: "finance_post", local: true do |f| %>
+
+    <div class="d-flex justify-content-center fs-1">
+      <%= f.label :form_income, '収入',class:"p-3 income", value:1, id: "incomeButton" %>
+      <%= f.label :form_spending, '支出', class:"p-3 spending", value:2, id: "spendingButton" %>
+      <%= f.hidden_field :colum, value: 1, name: "record[status]" %>
+ 
+    </div>
+
+    <div class="wrap-form-contents">
+      <label for="formDate" class="form-label fs-1">日付</label>
+      <%= f.date_field :r_date, class:"form-control h-1", id:"formDate" %>
+    </div>
+
+    <div class="wrap-form-contents">
+      <label for="formGenre" class="form-label fs-1">カテゴリー</label>
+      <%= f.collection_select :genre_id, @genres, :id, :g_name, {include_blank: "---"} ,class:"form-select h-1", id: "formGenre"%>
+    </div>
+
+    <div class="wrap-form-contents">
+      <label for="formPrice" class="form-label fs-1">金額</label>
+      <%= f.text_field :price, class:"form-control h-1", id:"formPrice" %>
+    </div>
+
+    <div class="wrap-form-contents">
+      <label for="formMemo" class="form-label fs-1">メモ</label>
+      <%= f.text_area :memo, class:"form-control h-2", id:"formMemo" %>
+    </div>
+
+    <div class="wrap-form-contents">
+      <div class="d-flex justify-content-center">
+        <a href="#" class="add-category fs-1">カテゴリーを追加する</a>
+      </div>
+    </div>
+  
+    <div class="wrap-form-submit">
+      <div class="d-grid gap-2">
+        <%= f.submit '保存',  class:"btn btn-primary h-1" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<%= render "shared/footer" %>
