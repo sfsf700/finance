@@ -2,7 +2,7 @@ class GenresController < ApplicationController
   before_action :authenticate_user!
 
   def index 
-    @genres = Genre.includes(:user)
+    @genres = Genre.where(user_id: current_user.id)
   end
 
   def new

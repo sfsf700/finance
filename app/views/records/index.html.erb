@@ -1,6 +1,14 @@
 <div>
-  <%= month_calendar do |date| %>
+  <%= month_calendar items: @items do |date, items| %>
     <%= date %>
+    
+    <% @items.each do |key, value| %>
+      <% if date == key %>
+        <div>
+          <%= value.to_s(:delimited) %>
+        </div>
+      <% end %>
+    <% end %>
   <% end %> 
 
   <div class="wrap-new">
@@ -14,15 +22,18 @@
         <div class="fs-2 ceb fw-bold">支出</div>
         <div class="fs-2 price"><%= @select_spending.to_s(:delimited) %>円</div>
       </div>
- 
+       <div class="d-flex">
+        <div class="fs-2 ceb fw-bold">合計</div>
+        <div class="fs-2 price"><%= (@select_income - @select_spending).to_s(:delimited) %>円</div>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="finance-index">
   <% @records.each do |record| %>
-    <% if record.status == 1 %>
-      <div class="d-flex border-bottom pt-5">
+    <% if record.status == 2 %>
+      <div class="d-flex border-bottom pt-5 bg-income">
         <div class="f-date fs-1"><%= record.r_date.strftime('%m月%d日') %></div>
         <div class="f-date f-category fs-1"><%= record.genre.g_name%></div>
         <div class="f-price fs-1"><%= record.price.to_s(:delimited) %></div>
@@ -31,7 +42,7 @@
       <div class="d-flex border-bottom pt-5">
         <div class="f-date fs-1"><%= record.r_date.strftime('%m月%d日') %></div>
         <div class="f-date f-category fs-1"><%= record.genre.g_name%></div>
-        <div class="f-price fs-1 spending-status">-<%= record.price.to_s(:delimited) %></div>
+        <div class="f-price fs-1"><%= record.price.to_s(:delimited) %></div>
       </div>
     <% end %>
   <% end %>

@@ -3,7 +3,7 @@ class RecordsController < ApplicationController
 
   def new
     @record = Record.new
-    @genres = Genre.all
+    @genres = Genre.where(user_id: current_user.id)
   end
 
   def create
@@ -11,7 +11,7 @@ class RecordsController < ApplicationController
     if @record.save
       redirect_to root_path
     else
-      redirect_to root_path
+      render :new
     end
   end
 
@@ -19,10 +19,18 @@ class RecordsController < ApplicationController
   end
 
   def index
-    @records = Record.includes(:user).order('r_date DESC')
+
+    date = params[:start_date]
     
-    @select_income = Record.where(status: 2).sum(:price) ## 収入合計
-    @select_spending = Record.where(status: 1).sum(:price) ## 支出合計
+    s = date.to_date
+    sta_day = s.beginning_of_month
+    end_day = s.end_of_month
+    
+    @items = Record.all.where(user_id: current_user.id).group(:r_date).sum(:price)
+    @records = Record.includes(:user).order('r_date DESC').where(user_id: current_user.id).where(r_date: sta_day..end_day)
+    
+    @select_income = Record.where(status: 2).where(user_id: current_user.id).where(r_date: sta_day..end_day).sum(:price) 
+    @select_spending = Record.where(status: 1).where(user_id: current_user.id).where(r_date: sta_day..end_day).sum(:price) ## 支出合計
     
   end
 
