@@ -1,19 +1,19 @@
 <div class="bg-success bg-gradient">
   <div class="finance-regi fs-60">
-    ジャンル登録
+    カテゴリー登録
   </div>
 </div>
 
 <div class="wrap-new">
   <%= form_with model: @genre, loclal: true do |f| %>
     <div class="wrap-form-contents">
-      <label for="formGroupExampleInput2" class="form-label fs-1">ジャンルの名前を入力</label>
+      <label for="formGroupExampleInput2" class="form-label fs-1">カテゴリーの名前を入力</label>
       <%= f.text_area :g_name, class: "form-control h-2", id: "formGroupExampleInput2" %>
     </div>
 
     <div class="wrap-form-contents">
       <div class="d-flex justify-content-center">
-         <%= link_to '登録中ジャンル一覧', genres_path, class:"add-category fs-1" %>
+         <%= link_to '登録中カテゴリー', genres_path, class:"add-category fs-1" %>
       </div>
     </div>
   

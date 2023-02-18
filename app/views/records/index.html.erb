@@ -1,6 +1,6 @@
-<div>
+<div class="calender-bg">
   <%= month_calendar items: @items do |date, items| %>
-    <%= date %>
+    <%= date.day %>
     
     <% @items.each do |key, value| %>
       <% if date == key %>

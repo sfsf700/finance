@@ -4,6 +4,8 @@ window.addEventListener('load', function() {
   const incomeButton = document.getElementById('incomeButton')
   const colum = document.getElementById('record_colum')
 
+  if (spendingButton == null) return
+
 
   spendingButton.addEventListener('click', function() {
 

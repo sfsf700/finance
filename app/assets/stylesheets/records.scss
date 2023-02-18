@@ -10,7 +10,7 @@
 }
 
 .wrap-new {
-  padding: 4rem 2rem;
+  padding: 1rem 2rem;
   width: 100%;
 }
 
@@ -68,10 +68,18 @@
   line-height: 5rem;
   text-decoration: none;
   color: black;
+  display: flex;
+  justify-content: space-between;
 }
 
 
 /* finance-index */
+
+.calender-bg {
+  background-color: #e9ecef;
+  position: sticky;
+  top: 0;
+}
 
 .finance-total {
   background-color: #fff;
@@ -96,7 +104,7 @@
 
 .finance-index {
   background-color: #fff;
-  padding: 2rem;
+  padding: 0 2rem;
 }
 
 .f-date {
@@ -148,3 +156,13 @@ input#record_spending_value2 {
 .bg-income {
   background-color: aliceblue;
 }
+
+.danger {
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 20%;
+  border: 1px solid;
+  text-align: center;
+}
+

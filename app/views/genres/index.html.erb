@@ -1,14 +1,19 @@
 <div class="bg-success bg-gradient">
   <div class="finance-regi fs-60">
-    ジャンル一覧
+    カテゴリー編集
   </div>
 </div>
 
 <div class="wrap-new">
   <% @genres.each do |genre| %>
-    <div class="row align-items-center">
+    <div class="row align-items-center"  >
       <div class= "border-bottom border-dark setting-contents fs-1">
         <%= genre.g_name %>
+        <div id="alert">
+          <%= link_to genre_path(genre.id), method: :delete ,  data: { confirm: "削除してよろしいですか?" } do %>
+            <i class="fa-regular fa-trash-can"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>

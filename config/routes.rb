@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   root to: "records#new"
   resources :records, only: [:index, :new, :create]
   resources :spendings, only: [:new, :create]
-  resources :genres, only: [:new, :create, :index]
-  get 'setting', action: :setting, controller: 'records'
+  resources :genres, only: [:new, :create, :index, :destroy]
+  get 'setting', action: :setting, controller: 'genres'
 end

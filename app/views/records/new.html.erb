@@ -16,7 +16,7 @@
 
     <div class="wrap-form-contents">
       <label for="formDate" class="form-label fs-1">日付</label>
-      <%= f.date_field :r_date, class:"form-control h-1", id:"formDate" %>
+      <%= f.date_field :r_date, class:"form-control h-1", id:"formDate", value: Time.now.strftime("%Y-%m-%d") %>
     </div>
 
     <div class="wrap-form-contents">
@@ -31,12 +31,12 @@
 
     <div class="wrap-form-contents">
       <label for="formMemo" class="form-label fs-1">メモ</label>
-      <%= f.text_area :memo, class:"form-control h-2", id:"formMemo" %>
+      <%= f.text_area :memo, class:"form-control h-2", id:"formMemo", placeholder: "品名など" %>
     </div>
 
     <div class="wrap-form-contents">
       <div class="d-flex justify-content-center">
-        <a href="#" class="add-category fs-1">カテゴリーを追加する</a>
+        <a href="/genres/new" class="add-category fs-1">カテゴリーを追加する</a>
       </div>
     </div>
   
