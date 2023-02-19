@@ -60,3 +60,4 @@ gem "net-http"
 gem 'devise'
 gem "simple_calendar", "~> 2.4"
 gem 'pry-rails'
+gem "chartkick"

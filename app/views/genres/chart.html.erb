@@ -1,0 +1,52 @@
+<div class="chart-top">
+  <div class="calendar-heading">
+    <%= link_to "Previous",chart_path(month:@month.prev_month), class:"chart-link" %>
+    <span class="calendar-title"><%= @month.strftime('%Y%B') %></span><%= link_to "Next",chart_path(month:@month.next_month), class:"chart-link" %>
+  </div>
+</div>
+<div class="switch-button pt-3 pb-3">
+  <button type="button" class="pie_btn btn-primary" id="income-btn">収入</button>
+  <button type="button" class="pie_btn btn-success" id="spending-btn">支出</button>
+</div>
+<div class="chart-spending" id="pie_spending">
+  <%= pie_chart @spending %>
+</div>
+<div class="chart-income" id="pie_income">
+  <%= pie_chart @income %>
+</div>
+
+<div class="chart-income" id="pie_income_total">
+  <div class="d-flex justify-content-around pt-3 pb-3 mt-5 chart-total">
+    <div class="f-date f-category fs-1">収入合計</div>
+    <div class="f-price fs-1"><%= (@select_income).to_s(:delimited) %>円</div>
+  </div>
+</div>
+
+<div class="chart-spending" id="pie_spending_total">
+  <div class="d-flex justify-content-around pt-3 pb-3 mt-5 chart-total">
+    <div class="f-date f-category fs-1">支出合計</div>
+    <div class="f-price fs-1"><%= (@select_spending).to_s(:delimited) %>円</div>
+  </div>
+</div>
+
+<div class="chart-income" id="pie_income_each">
+  <% @inc_total.each do |total| %>
+  <div class="d-flex border-bottom justify-content-around pt-3 pb-3">
+    <div class="f-date f-category fs-1"><%= total[0]%></div>
+    <div class="f-price fs-1"><%= total[1].to_s(:delimited) %>円</div>
+  </div>
+  <% end %>
+</div>
+
+<div class="chart-spending" id="pie_spending_each">
+  <% @spe_total.each do |total| %>
+  <div class="d-flex border-bottom justify-content-around pt-3 pb-3">
+    <div class="f-date f-category fs-1"><%= total[0]%></div>
+    <div class="f-price fs-1"><%= total[1].to_s(:delimited) %>円</div>
+  </div>
+  <% end %>
+</div>
+
+
+
+<%= render "shared/footer" %>

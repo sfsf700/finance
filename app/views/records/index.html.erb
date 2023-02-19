@@ -33,13 +33,13 @@
 <div class="finance-index">
   <% @records.each do |record| %>
     <% if record.status == 2 %>
-      <div class="d-flex border-bottom pt-5 bg-income">
+      <div class="d-flex border-bottom finance-records bg-income">
         <div class="f-date fs-1"><%= record.r_date.strftime('%m月%d日') %></div>
         <div class="f-date f-category fs-1"><%= record.genre.g_name%></div>
         <div class="f-price fs-1"><%= record.price.to_s(:delimited) %></div>
       </div>
     <% else %>
-      <div class="d-flex border-bottom pt-5">
+      <div class="d-flex border-bottom finance-records">
         <div class="f-date fs-1"><%= record.r_date.strftime('%m月%d日') %></div>
         <div class="f-date f-category fs-1"><%= record.genre.g_name%></div>
         <div class="f-price fs-1"><%= record.price.to_s(:delimited) %></div>

@@ -5,7 +5,7 @@
 .finance-regi {
   display: flex;
   justify-content: center;
-  padding: 30px;
+  padding: 20px;
   color: #fff;
 }
 
@@ -36,9 +36,12 @@
 }
 
 .wrap-form-submit {
-  margin: 150px 0;
+  margin-top: 100px;
 }
 
+.fs-46 {
+  font-size: 46px;
+}
 .fs-60 {
   font-size: 60px;
 }
@@ -104,7 +107,10 @@
 
 .finance-index {
   background-color: #fff;
-  padding: 0 2rem;
+}
+
+.finance-records {
+  padding: 1rem;
 }
 
 .f-date {
