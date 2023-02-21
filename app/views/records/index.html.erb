@@ -1,51 +1,78 @@
-<div class="calender-bg">
-  <%= month_calendar items: @items do |date, items| %>
-    <%= date.day %>
-    
-    <% @items.each do |key, value| %>
-      <% if date == key %>
-        <div>
-          <%= value.to_s(:delimited) %>
-        </div>
-      <% end %>
-    <% end %>
-  <% end %> 
+<header class="top">
+  <div class="site-header">
+    <div class="site-title">俺の家計簿</div>
+  </div>
+</header>
+<nav class="menu-wrap">
+  <ul class="nav-wrap">
+    <li class="nav-item">
+      <a class="nav-link" href="/" data-turbolinks= false><i class="fa-solid fa-pen"><br>入力</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/records"><i class="fa-solid fa-calendar"><br>カレンダー</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/chart" data-turbolinks= false><i class="fa-solid fa-database"><br>円グラフ</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/setting"><i class="fa-solid fa-gear"><br>設定</i></a>
+    </li>
+  </ul>
+</nav>
 
-  <div class="wrap-new">
-    <div class="finance-total">
-    
-      <div class="d-flex">
-        <div class="fs-2 ceb fw-bold">収入</div>
-        <div class="fs-2 price"><%= @select_income.to_s(:delimited) %>円</div>
-      </div>
-      <div class="d-flex">
-        <div class="fs-2 ceb fw-bold">支出</div>
-        <div class="fs-2 price"><%= @select_spending.to_s(:delimited) %>円</div>
-      </div>
-       <div class="d-flex">
-        <div class="fs-2 ceb fw-bold">合計</div>
-        <div class="fs-2 price"><%= (@select_income - @select_spending).to_s(:delimited) %>円</div>
+
+<div class="calender-bg">
+  <div class="calendar-left">
+    <%= month_calendar items: @items do |date, items| %>
+      <%= date.day %>
+
+      <% @items.each do |key, value| %>
+        <% if date == key %>
+          <div>
+            <%= value.to_s(:delimited) %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %> 
+
+    <div class="finance-index">
+      <div class="finance-total">
+        <div>
+          <div>収入</div>
+          <div><%= @select_income.to_s(:delimited) %>円</div>
+        </div>
+        <div>
+          <div>支出</div>
+          <div><%= @select_spending.to_s(:delimited) %>円</div>
+        </div>
+         <div>
+          <div>合計</div>
+          <div><%= (@select_income - @select_spending).to_s(:delimited) %>円</div>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="finance-index">
-  <% @records.each do |record| %>
-    <% if record.status == 2 %>
-      <div class="d-flex border-bottom finance-records bg-income">
-        <div class="f-date fs-1"><%= record.r_date.strftime('%m月%d日') %></div>
-        <div class="f-date f-category fs-1"><%= record.genre.g_name%></div>
-        <div class="f-price fs-1"><%= record.price.to_s(:delimited) %></div>
-      </div>
-    <% else %>
-      <div class="d-flex border-bottom finance-records">
-        <div class="f-date fs-1"><%= record.r_date.strftime('%m月%d日') %></div>
-        <div class="f-date f-category fs-1"><%= record.genre.g_name%></div>
-        <div class="f-price fs-1"><%= record.price.to_s(:delimited) %></div>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+  <div class="calendar-right">
+    <div class="calendar-index">日付別一覧</div>
+    <div class="record-contents">
+      <% @records.each do |record| %>
+        <% if record.status == 2 %>
+          <div class="record-content">
+            <div class="record-date"><%= record.r_date.strftime('%m月%d日') %></div>
+            <div class="record-genre"><%= record.genre.g_name%></div>
+            <div class="record-price"><%= record.price.to_s(:delimited) %>円</div>
+          </div>
+        <% else %>
+          <div class="record-content">
+            <div class="record-date"><%= record.r_date.strftime('%m月%d日') %></div>
+            <div class="record-genre"><%= record.genre.g_name%></div>
+            <div class="record-price"><%= record.price.to_s(:delimited) %>円</div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
 
-<%= render "shared/footer" %>
+  </div>
+
+</div>

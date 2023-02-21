@@ -1,4 +1,9 @@
-<div class="wrap-new-user">
+<header class="top">
+  <div class="site-header">
+    <div class="site-title">俺の家計簿</div>
+  </div>
+</header>
+<div>
   <div class="page-header">
     <div class="logo"><%= image_tag "f_logo.png", class: "app_logo" %></div>
     <div class="create-account">
@@ -10,23 +15,23 @@
   <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field">
-      <%= f.label :name, class:"form-label fs-1" %><br />
-      <%= f.text_field :name , class:"form-control h-1" , maxlength: "20", required: true %>
+      <%= f.label :name, class:"form-label" %><br />
+      <%= f.text_field :name , class:"form-control" , maxlength: "20", required: true %>
     </div>
     <div class="field">
-      <%= f.label :email, class:"form-label fs-1" %><br />
-      <%= f.email_field :email, class:"form-control h-1", required: true %>
+      <%= f.label :email, class:"form-label" %><br />
+      <%= f.email_field :email, class:"form-control", required: true %>
     </div>
     <div class="field">
-      <%= f.label :"Password", class:"form-label fs-1" %><br />
-      <%= f.password_field :password, class:"form-control h-1", autocomplete: "off", required: true %>
+      <%= f.label :"Password", class:"form-label" %><br />
+      <%= f.password_field :password, class:"form-control", autocomplete: "off", required: true %>
     </div>
     <div class="field">
-      <%= f.label :"Password(Confirmation)", class:"form-label fs-1" %><br />
-      <%= f.password_field :password_confirmation, class:"form-control h-1", autocomplete: "off", required: true %>
+      <%= f.label :"Password(Confirmation)", class:"form-label" %><br />
+      <%= f.password_field :password_confirmation, class:"form-control", autocomplete: "off", required: true %>
     </div>
-    <div class="d-grid gap-2 wrap-form-submit">
-      <%= f.submit "Sign up", class:"btn btn-primary bg-success border-success h-1" %>
+    <div>
+      <%= f.submit "Sign up", class:"user-login" %>
     </div>
   <% end %>
 </div>

@@ -8,18 +8,16 @@ window.addEventListener('load', function() {
 
 
   spendingButton.addEventListener('click', function() {
-
-    this.setAttribute("style", "color: green;")
-    incomeButton.setAttribute("style", "color: white;")
+    this.setAttribute("style", "background-color: white;")
+    incomeButton.setAttribute("style", "background-color: darkgray;")
     colum.setAttribute("name", "record[status]")
     colum.setAttribute("value", "1")
   });
 
 
   incomeButton.addEventListener('click', function() {
-
-    this.setAttribute("style", "color: green;")
-    spendingButton.setAttribute("style", "color: white;")
+    this.setAttribute("style", "background-color: white;")
+    spendingButton.setAttribute("style", "background-color: darkgray;")
     colum.setAttribute("name", "record[status]")
     colum.setAttribute("value", "2")
   });

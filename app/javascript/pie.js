@@ -12,6 +12,8 @@ window.addEventListener('load', function() {
   
 
   incomeBtn.addEventListener('click', function() {
+    this.setAttribute("style", "background-color: white;")
+    spendingBtn.setAttribute("style", "background-color: darkgray;")
     pieIncome.setAttribute("style", "display: inline;")
     pieSpending.setAttribute("style", "display: none;")
     pieIncomeTotal.setAttribute("style", "display: inline;")
@@ -21,6 +23,8 @@ window.addEventListener('load', function() {
   })
 
   spendingBtn.addEventListener('click', function() {
+    this.setAttribute("style", "background-color: white;")
+    incomeBtn.setAttribute("style", "background-color: darkgray;")
     pieIncome.setAttribute("style", "display: none;")
     pieSpending.setAttribute("style", "display: inline;")
     pieIncomeTotal.setAttribute("style", "display: none;")

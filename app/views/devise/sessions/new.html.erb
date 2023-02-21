@@ -1,4 +1,9 @@
-<div class="wrap-new-user">
+<header class="top">
+  <div class="site-header">
+    <div class="site-title">俺の家計簿</div>
+  </div>
+</header>
+<div>
   <div class="page-header">
     <div class="logo"><%= image_tag "f_logo.png", class: "app_logo" %></div>
     <div class="create-account">
@@ -8,23 +13,23 @@
 
   <%= form_with model: resource, as: resource_name, url: session_path(resource_name), class: 'new_user', local: true do |f| %>
     <div class="field">
-      <%= f.label :name, class:"form-label fs-1" %><br />
-      <%= f.text_field :name , class:"form-control h-1" %>
+      <%= f.label :name, class:"form-label" %><br />
+      <%= f.text_field :name , class:"form-control" %>
     </div>
 
     <div class="field">
-      <%= f.label :"Password", class:"form-label fs-1" %><br />
-      <%= f.password_field :password, class:"form-control h-1", autocomplete: "off" %>
+      <%= f.label :"Password", class:"form-label" %><br />
+      <%= f.password_field :password, class:"form-control", autocomplete: "off" %>
     </div>
 
-    <div class="d-grid gap-2 wrap-form-submit">
-      <%= f.submit "ログイン", class:"btn btn-primary bg-success border-success h-1" %>
+    <div class="user-form-submit">
+      <%= f.submit "ログイン", class:"user-login" %>
     </div>
   <% end %>
   <div class="new_user">
     <div class="login_transition">初めての方はこちら</div>
-    <div class="d-grid gap-2">
-      <a href="/users/sign_up" class="btn btn-primary bg-success border-success h-1">Create Account</a>
+    <div class="user-form-submit">
+      <a href="/users/sign_up" class="user-login">Create Account</a>
     </div>
   </div>
 </div>

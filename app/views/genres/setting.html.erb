@@ -1,35 +1,46 @@
-<div class="bg-success bg-gradient">
-  <div class="finance-regi fs-60">
-    設定
+<header class="top">
+  <div class="site-header">
+    <div class="site-title">俺の家計簿</div>
   </div>
+</header>
+<nav class="menu-wrap">
+  <ul class="nav-wrap">
+    <li class="nav-item">
+      <a class="nav-link" href="/" data-turbolinks= false><i class="fa-solid fa-pen"><br>入力</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/records"><i class="fa-solid fa-calendar"><br>カレンダー</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/chart" data-turbolinks= false><i class="fa-solid fa-database"><br>円グラフ</i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/setting"><i class="fa-solid fa-gear"><br>設定</i></a>
+    </li>
+  </ul>
+</nav>
+
+<div class="setting-contents">
+  <div class="setting-wrap">
+    <ul class="setting-title"><i class="fa-solid fa-wrench icon"><span class="icon-name">機能設定</span></i>
+      <li>
+        <%= link_to 'カテゴリー編集', new_genre_path ,class: "category-content" %>
+      </li>
+    </ul>
+  </div>
+
+  <div class="setting-wrap">
+    <ul class="setting-title"><i class="fa-solid fa-user icon"><span class="icon-name">アカウント設定</span></i>
+      <li>
+        <a class="category-content">アドレス変更</a>
+      </li>
+      <li>
+        <a class="category-content">パスワード変更</a>
+      </li>
+      <li>
+        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "category-content" %>
+      </li>
+    </ul>
+  </div>
+
 </div>
-
-<div class="wrap-new">
-  <div class="row align-items-center">
-    <div class="col fs-48 mt-5 mb-4">機能設定
-    </div>
-    <%= link_to  new_genre_path ,class: "border-top border-dark setting-contents fs-1" do %>
-      カテゴリー追加
-    <% end %>
-    <%= link_to genres_path, class: "border-top border-bottom border-dark setting-contents fs-1" do %>
-      カテゴリー編集
-    <% end %>
-  </div>
-
-
-  <div class="row align-items-center">
-    <div class="col fs-48 mt-5 mb-4">アカウント設定</div>
-    <a class="border-top border-dark setting-contents">
-      <div href="#" class="fs-1 ">アドレス変更</div>
-    </a>
-    <a class="border-top border-dark setting-contents">
-      <div class="fs-1">パスワード変更</div>
-    </a>
-    <%= link_to destroy_user_session_path, method: :delete, class: "border-top border-bottom border-dark setting-contents fs-1" do%>
-      ログアウト
-    <% end %>
-
-  </div>
-</div>
-
-<%= render "shared/footer" %>

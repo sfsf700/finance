@@ -8,9 +8,28 @@
 }
 
 .app_logo {
-  width: 20%;
+  width: 5%;
   height: auto;
   margin: 0 auto;
+}
+
+.user-form-submit {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.user-login {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .create-account {
@@ -20,24 +39,19 @@
   color: green;
 }
 
-.wrap-new-user {
-  padding: 20px;
-  height: 100vh;
-}
-
 .new_user {
-  width: 90%;
-  margin: 0 auto;
+  width: 30%;
+  margin: 20px auto;
 }
 
 .field {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .login_transition {
   display: flex;
   justify-content: center;
-  font-size: 36px;
-  margin-bottom: 5%;
+  font-size: 27px;
   font-weight: bold;
+  margin-top: 60px;
 }
