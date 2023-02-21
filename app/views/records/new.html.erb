@@ -1,24 +1,4 @@
-<header class="top">
-  <div class="site-header">
-    <div class="site-title">俺の家計簿</div>
-  </div>
-</header>
-<nav class="menu-wrap">
-  <ul class="nav-wrap">
-    <li class="nav-item">
-      <a class="nav-link" href="/" data-turbolinks= false><i class="fa-solid fa-pen"><br>入力</i></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/records"><i class="fa-solid fa-calendar"><br>カレンダー</i></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/chart" data-turbolinks= false><i class="fa-solid fa-database"><br>円グラフ</i></a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="/setting"><i class="fa-solid fa-gear"><br>設定</i></a>
-    </li>
-  </ul>
-</nav>
+<%= render "shared/header" %>
 
 <div class="wrap-new">
   <%= form_with model: @record, id: 'finance_form', class: "finance_post", local: true do |f| %>
@@ -26,7 +6,7 @@
     <div class="change-btn">
       <%= f.label :form_income, '収入',class:"income-btn", value:1, id: "incomeButton" %>
       <%= f.label :form_spending, '支出', class:"spending-btn", value:2, id: "spendingButton" %>
-      <%= f.hidden_field :colum, value: 1, name: "record[status]" %>
+      <%= f.hidden_field :colum, value: 2, name: "record[status]" %>
  
     </div>
 

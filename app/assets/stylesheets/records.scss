@@ -201,6 +201,10 @@
   margin: 0 auto;
 }
 
+.red {
+  color: red;
+}
+
 .finance-total {
   display: flex;
   justify-content: space-around;
@@ -229,6 +233,10 @@
   padding: 10px 0;
   font-size: 16px;
   border-bottom: 1px solid darkgray;
+}
+
+.bg-income {
+  background-color: lightblue;
 }
 
 .record-date {

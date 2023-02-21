@@ -1,0 +1,32 @@
+<header class="top">
+  <div class="site-header">
+    <div class="site-title">俺の家計簿</div>
+  </div>
+</header>
+<div>
+  <div class="page-header">
+    <div class="logo"><%= image_tag "f_logo.png", class: "app_logo" %></div>
+    <div class="create-account">
+      <h2 class="fs-60">アカウント編集</h2>
+    </div>
+  </div>
+
+  <%= form_with model: current_user, class: 'new_user', local: true do |f| %>
+    <div class="field">
+      <%= f.label :name, class:"form-label" %><br />
+      <%= f.text_field :name , class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :"Email", class:"form-label" %><br />
+      <%= f.email_field :email, class:"form-control", autocomplete: "off" %>
+    </div>
+
+    <div class="user-form-submit">
+      <%= f.submit "更新", class:"user-login" %>
+    </div>
+    <div class="cancel-btn">
+      <%= link_to 'キャンセル', root_path, class: "user-update-cancel" %>
+    </div>
+  <% end %>
+</div>

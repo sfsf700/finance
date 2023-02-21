@@ -38,7 +38,10 @@ class RecordsController < ApplicationController
       @select_spending = Record.where(status: 1).where(user_id: current_user.id).where(r_date: sta..end_day).sum(:price) ## 支出
     end
 
-    @items = Record.all.where(user_id: current_user.id).group(:r_date).sum(:price)    
+    @incomes = Record.all.where(user_id: current_user.id).where(status: 2).group(:r_date).sum(:price)
+    @spendings = Record.all.where(user_id: current_user.id).where(status: 1).group(:r_date).sum(:price)
+    @total = @incomes.merge(@spendings){|key, v1, v2| v1 + v2}
+    @items = @total.merge(@spendings){|key, v1, v2| v1 - v2 - v2}
   end
 
   private 
