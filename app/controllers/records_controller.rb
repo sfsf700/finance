@@ -1,5 +1,7 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_genres, only: [:create]
+  before_action :set_params, only: [:edit, :update, :destroy]
 
   def new
     @record = Record.new
@@ -44,10 +46,41 @@ class RecordsController < ApplicationController
     @items = @total.merge(@spendings){|key, v1, v2| v1 - v2 - v2}
   end
 
+
+  def edit
+    @genres = Genre.where(user_id: current_user.id)
+  end
+
+  def update
+    
+    @record.update(record_params)
+    if @record.valid?
+      redirect_to records_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    if @record.user_id == current_user.id
+      @record.destroy
+      redirect_to records_path
+    else
+      redirect_to root_path
+    end
+  end
+
   private 
   def record_params
     params.require(:record).permit(:memo, :price, :genre_id, :r_date, :status).merge(user_id: current_user.id)
   end
 
+  def set_params
+    @record = Record.find(params[:id])
+  end
+
+  def set_genres
+    @genres = Genre.where(user_id: current_user.id)
+  end
 
 end

@@ -2,7 +2,7 @@
 
 <div class="wrap-new">
   <%= form_with model: @record, id: 'finance_form', class: "finance_post", local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
+
     <div class="change-btn">
       <%= f.label :form_income, '収入',class:"income-btn", value:1, id: "incomeButton" %>
       <%= f.label :form_spending, '支出', class:"spending-btn", value:2, id: "spendingButton" %>
@@ -17,12 +17,12 @@
 
     <div class="wrap-form-contents">
       <label for="formGenre" class="form-label">カテゴリー</label><br>
-      <%= f.collection_select :genre_id, @genres, :id, :g_name, {include_blank: "---"} ,class:"form-control", id: "formGenre" %>
+      <%= f.collection_select :genre_id, @genres, :id, :g_name, {include_blank: "---"} ,class:"form-control", id: "formGenre"%>
     </div>
 
     <div class="wrap-form-contents">
       <label for="formPrice" class="form-label">金額</label><br>
-      <%= f.text_field :price, class:"form-control", id:"formPrice"%>
+      <%= f.text_field :price, class:"form-control", id:"formPrice" %>
     </div>
 
     <div class="wrap-form-contents">
@@ -38,7 +38,12 @@
   
     <div class="mt-1">
       <div class="wrap-form-submit">
-        <%= f.submit '保存',  class:"register-btn" %>
+        <%= f.submit '更新',  class:"register-btn" %>
+      </div>
+    </div>
+    <div class="mt-1">
+      <div class="wrap-form-submit">
+        <%= link_to '削除', "/records/#{@record.id}", class: "delete-btn", data: { confirm: '本当にいいのか？' }, method: :delete %>
       </div>
     </div>
   <% end %>

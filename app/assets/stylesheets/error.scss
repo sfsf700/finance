@@ -1,0 +1,23 @@
+.error-alert {
+  margin-top: 20px;
+  border: 3px solid red;
+}
+
+.error-head {
+  background-color: red;
+  color: white;
+  font-size: 18px;
+  padding: 3px;
+  display: flex;
+}
+
+.error-message {
+  padding: 5px 0;
+  background-color: darkgray;
+  font-size: 18px;
+  padding: 3px;
+}
+
+.fa-hand-point-down {
+  padding-left: 5px;
+}

@@ -1,0 +1,12 @@
+<% if model.errors.any? %>
+<div class="error-alert">
+  <div class="error-head">以下の内容を確認するんだ<span><i class="fa-solid fa-hand-point-down"></i></span></div>
+  <ul>
+    <% model.errors.full_messages.each do |message| %>
+    <li class='error-message'>
+      ・<%= message %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>

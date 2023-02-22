@@ -1,6 +1,8 @@
 /* records/new.html */
 .site-header {
   border-bottom: 1px solid darkgray;
+  display: flex;
+  justify-content: space-between;
 }
 
 .site-title {
@@ -127,48 +129,28 @@
   opacity: 0.7;
 }
 
-.mt-1 {
-  margin-top: 60px;
-}
-
-/* genres/setting.html */
-
-.setting-contents {
-  width: 30%;
-  margin: 0 auto;
-}
-
-.setting-title {
-  font-size: 30px;
-  margin: 60px 0;
-}
-
-.icon-name {
-  margin-left: 15px;
-}
-
-.icon {
-  border-bottom: 1px solid;
-}
-
-.category-content {
-  font-size: 24px;
-  text-decoration: none;
-  color: black;
+.delete-btn {
   display: flex;
   width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-}
-
-.category-content:hover {
-  background-color: darkgrey;
+  font-size: 30px;
+  background-color: red;
   color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  text-decoration: none;
+  justify-content: center;
 }
 
-.setting-wrap {
-  margin: 30px 0;
+.delete-btn:hover {
+  opacity: 0.7;
 }
+
+.mt-1 {
+  margin-top: 50px;
+}
+
 
 /* records/index.html */
 
@@ -253,106 +235,8 @@
   width: 100%;
 }
 
-/* genres/chart.html */
-
-.pie-left {
-  width: 50%;
-}
-
-.pie-right {
-  width: 50%;
-}
-
-.pie-change-btn {
-  display: flex;
-  justify-content: center;
-  background-color: darkgray;
-  width: 30%;
-  padding: 10px;
-  border-radius: 5px;
-  margin: 20px auto;
-}
-
-.pie-income-btn {
-  font-size: 20px;
-  color: black;
-  background-color: white;
-  border-radius: 5px;
-  padding: 5px;
-  width: 60%;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-}
-
-.pie-spending-btn {
-  font-size: 20px;
-  color: black;
-  padding: 5px;
-  border-radius: 5px;
-  width: 60%;
-  text-align: center;
-  border: none;
-  background-color: darkgray;
-  cursor: pointer;
-}
-
-.spending-graph {
-  display: none;
-}
-
-.chart-graph {
-  padding: 70px 0;
-}
-
-.chart-total-price {
-  display: flex;
-  justify-content: space-between;
-  font-size: 20px;
-  width: 50%;
-  margin: 0 auto;
-  border-bottom: 1px solid darkgray;
-}
-
-.chart-contents {
-  width: 60%;
-  margin: 0 auto;
-}
-
-/* genres/new.html */
-
-.category-page {
-  display: flex;
-}
-
-.category-page-left {
-  width: 50%;
-}
-
-.category-page-right {
-  width: 50%;
-}
-
-.new-category-head {
-  display: flex;
-  justify-content: center;
-}
-
-.new-category {
-  font-size: 20px;
-  padding: 20px 0;
-}
-
-.category-form {
-  width: 50%;
-  margin: 0 auto;
-  padding: 40px 0;
-}
-
-.fa-trash-can {
-  color: darkgray;
-}
-
-.fa-trash-can:hover {
+.edit-record {
+  text-decoration: none;
   color: black;
 }
+

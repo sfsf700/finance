@@ -1,6 +1,7 @@
 <header class="top">
   <div class="site-header">
     <div class="site-title">俺の家計簿</div>
+    <div><%= link_to 'すでに会員ならログインはここだ!', user_session_path, class: "my-finance-user" %></div>
   </div>
 </header>
 <div>
@@ -13,22 +14,23 @@
 
 
   <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+  
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field">
       <%= f.label :name, class:"form-label" %><br />
-      <%= f.text_field :name , class:"form-control" , maxlength: "20", required: true %>
+      <%= f.text_field :name , class:"form-control" , maxlength: "20" %>
     </div>
     <div class="field">
       <%= f.label :email, class:"form-label" %><br />
-      <%= f.email_field :email, class:"form-control", required: true %>
+      <%= f.email_field :email, class:"form-control"%>
     </div>
     <div class="field">
       <%= f.label :"Password", class:"form-label" %><br />
-      <%= f.password_field :password, class:"form-control", autocomplete: "off", required: true %>
+      <%= f.password_field :password, class:"form-control", autocomplete: "off" %>
     </div>
     <div class="field">
       <%= f.label :"Password(Confirmation)", class:"form-label" %><br />
-      <%= f.password_field :password_confirmation, class:"form-control", autocomplete: "off", required: true %>
+      <%= f.password_field :password_confirmation, class:"form-control", autocomplete: "off" %>
     </div>
     <div>
       <%= f.submit "Sign up", class:"user-login" %>

@@ -7,6 +7,7 @@
       <div class="new-category">カテゴリー登録</div>
     </div>
     <%= form_with model: @genre, loclal: true do |f| %>
+    
       <div class="wrap-form-contents ">
         <div class="category-form">
           <label for="formGroup" class="form-label">カテゴリーの名前を入力</label>
@@ -28,7 +29,7 @@
         <div class="record-content">
           <div><%= genre.g_name %></div>
           <div id="alert">
-            <%= link_to genre_path(genre.id), method: :delete ,  data: { confirm: "削除してよろしいですか?" } do %>
+            <%= link_to genre_path(genre.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
               <i class="fa-regular fa-trash-can"></i>
             <% end %>
           </div>

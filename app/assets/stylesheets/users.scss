@@ -1,5 +1,5 @@
 .page-header {
-  margin: 3% 0;
+  margin: 1% 0;
 }
 
 .logo {
@@ -83,4 +83,22 @@
 
 .user-update-cancel:hover {
   opacity: 0.7;
+}
+
+/* header/user-name */
+
+.user-name {
+  font-size: 22px;
+  text-decoration: none;
+  color: black;
+  padding: 0.8rem;
+  display: block;
+}
+
+.my-finance-user {
+  font-size: 22px;
+  text-decoration: none;
+  color: red;
+  padding: 0.8rem;
+  display: block;
 }
