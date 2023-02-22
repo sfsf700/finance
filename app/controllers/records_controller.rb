@@ -1,11 +1,10 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_genres, only: [:create]
+  before_action :set_genres, only: [:new, :create]
   before_action :set_params, only: [:edit, :update, :destroy]
 
   def new
     @record = Record.new
-    @genres = Genre.where(user_id: current_user.id)
   end
 
   def create
@@ -19,7 +18,6 @@ class RecordsController < ApplicationController
 
 
   def index
-
     now_day = Date.today
     sta = now_day.beginning_of_month
     end_day = now_day.end_of_month

@@ -1,4 +1,5 @@
 class GenresController < ApplicationController
+  require 'csv'
   before_action :authenticate_user!
 
 
@@ -45,10 +46,48 @@ class GenresController < ApplicationController
     end
   end
 
+  def csv
+    @records = Record.all.where(user_id: current_user.id).order(r_date: :desc)
+    respond_to do |format|
+      format.html
+      format.csv do |csv|
+        send_finance_csv(@records)
+      end
+    end
+  end
+
   private
 
   def genre_params
     params.require(:genre).permit(:g_name).merge(user_id: current_user.id)
+  end
+
+
+  def send_finance_csv(records)
+    csv_data = CSV.generate do |csv|
+      column_names = %w(日付 金額 カテゴリー 収支)
+      csv << column_names
+      records.each do |record|
+        if record.status == 1
+          column_values = [
+            record.r_date,
+            record.price,
+            record.genre.g_name,
+            record.status = "支出",
+          ]
+        else
+          column_values = [
+            record.r_date,
+            record.price,
+            record.genre.g_name,
+            record.status = "収入",
+          ]
+        end
+        csv << column_values
+      end
+    end
+    @user = current_user.name
+    send_data(csv_data, filename: "#{@user}の家計簿.csv")
   end
 
 end

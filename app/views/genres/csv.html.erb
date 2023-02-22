@@ -1,0 +1,36 @@
+<%= render "shared/header" %>
+
+<div class="csv-top">
+  <div class="all-finance">収支一覧(CSV出力イメージ)</div>
+  <div><%= link_to "CSVファイル出力", csv_path(format: :csv), class: "csv-export" %></div>
+</div>
+
+<div class="all-finance-index">
+  <table class="finance-tables">
+    <tr>
+      <th class="finance-table th-date">日付</th>
+      <th class="finance-table th-insp">収支</th>
+      <th class="finance-table th-category">カテゴリー</th>
+      <th class="finance-table th-price">金額</th>
+    </tr>
+    <% @records.each do |income| %>
+      <% if income.status == 1%>
+        <tr>
+          <td class="td-finance"><%= income.r_date.strftime('%m月%d日') %></td>
+          <td class="td-finance"><%= income.status = "支出" %></td>
+          <td class="td-finance"><%= income.genre.g_name%></td>
+          <td class="td-price"><%= income.price.to_s(:delimited) %>円</td>
+        </tr>
+      <% else %>
+        <tr>
+          <td class="td-finance"><%= income.r_date.strftime('%m月%d日') %></td>
+          <td class="td-finance"><%= income.status = "収入" %></td>
+          <td class="td-finance"><%= income.genre.g_name%></td>
+          <td class="td-price"><%= income.price.to_s(:delimited) %>円</td>
+        </tr>
+      <% end %>
+    <% end %>
+  </table>
+</div>
+
+

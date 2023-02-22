@@ -2,15 +2,18 @@
 
 <div class="setting-contents">
   <div class="setting-wrap">
-    <ul class="setting-title"><i class="fa-solid fa-wrench icon"><span class="icon-name">機能設定</span></i>
+    <ul class="setting-title"><i class="fa-solid fa-wrench icon"><span class="icon-name">機能</span></i>
       <li>
         <%= link_to 'カテゴリー編集', new_genre_path ,class: "category-content" %>
+      </li>
+      <li>
+        <%= link_to 'CSV出力', csv_path ,class: "category-content" %>
       </li>
     </ul>
   </div>
 
   <div class="setting-wrap">
-    <ul class="setting-title"><i class="fa-solid fa-user icon"><span class="icon-name">アカウント設定</span></i>
+    <ul class="setting-title"><i class="fa-solid fa-user icon"><span class="icon-name">アカウント</span></i>
       <li>
         <%= link_to 'アカウント編集', edit_user_path(current_user), class:"category-content" %>
       </li>
