@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_genres, only: [:new, :create]
+  before_action :set_genres, only: [:new, :create, :edit]
   before_action :set_params, only: [:edit, :update, :destroy]
 
   def new
@@ -46,11 +46,10 @@ class RecordsController < ApplicationController
 
 
   def edit
-    @genres = Genre.where(user_id: current_user.id)
+    
   end
 
   def update
-    
     @record.update(record_params)
     if @record.valid?
       redirect_to records_path

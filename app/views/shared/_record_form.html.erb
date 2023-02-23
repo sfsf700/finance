@@ -4,13 +4,13 @@
     <div class="change-btn">
       <%= f.label :form_income, '収入',class:"income-btn", value:1, id: "incomeButton" %>
       <%= f.label :form_spending, '支出', class:"spending-btn", value:2, id: "spendingButton" %>
-      <%= f.hidden_field :colum, value: 2, name: "record[status]" %>
+      <%= f.hidden_field :colum, value: @record.status, name: "record[status]",  id: "status-form"%>
  
     </div>
 
     <div class="wrap-form-contents">
       <label for="formDate" class="form-label">日付</label><br>
-      <%= f.date_field :r_date, class:"form-control", id:"formDate", value: Time.now.strftime("%Y-%m-%d") %>
+      <%= f.date_field :r_date, class:"form-control", id:"formDate", value: @record.r_date ? params[:r_date] : Time.now.strftime("%Y-%m-%d") %>
     </div>
 
     <div class="wrap-form-contents">
