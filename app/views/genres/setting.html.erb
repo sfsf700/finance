@@ -9,6 +9,9 @@
       <li>
         <%= link_to 'CSV出力', csv_path ,class: "category-content" %>
       </li>
+      <li>
+        <div class ="category-content" id="color-mode">カラーモード</div>
+      </li>
     </ul>
   </div>
 
@@ -22,5 +25,14 @@
       </li>
     </ul>
   </div>
-
 </div>
+
+<div id="nav-wrapper" class="nav-wrapper">
+  <nav class="sp-nav">
+    <i class="fa-regular fa-circle-xmark" id="js-black-bg"></i>
+      <ul>
+        <li class="mode-list ore-mode" id="ore-mode">俺モード</li>
+      </ul>
+  </nav>
+</div>
+<%= content_for(:title, "設定") %>

@@ -130,6 +130,7 @@
   width: 100%;
   margin: 10px 0;
   padding: 10px;
+  cursor: pointer;
 }
 
 .category-content:hover {
@@ -191,4 +192,81 @@
   padding: 5px;
   border: 1px solid;
   background-color: white;
+}
+
+/* color-mode */
+
+.sp-nav {
+  position: fixed;
+  right: -100%; 
+  top: 0;
+  width: 35%; 
+  height: 100vh;
+  background-color: darkgray;
+  transition: all 0.5s;
+  z-index: 200;
+  overflow-y: auto; 
+}
+
+.open .sp-nav {
+  right: 0;
+}
+
+.fa-regular.fa-circle-xmark {
+  font-size: 28px;
+  padding: 4vh 4vw;
+  color: #fff;
+  cursor: pointer;
+}
+
+.mode-list {
+  padding: 2vh 4vw;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ore-mode {
+  color: black;
+}
+
+.dark {
+  background-color: #444444;
+  color: silver;
+}
+
+.dark a {
+  color: silver;
+}
+
+.dark a:hover {
+  color: white;
+}
+
+.dark a.nav-link {
+  color: whitesmoke;
+}
+
+.dark a.add-category {
+  color: whitesmoke;
+}
+
+
+.dark .category-content {
+  color: silver;
+}
+
+.dark .category-content:hover {
+  color: white;
+}
+.dark .bg-income {
+  background-color: silver;
+  color: #444444;
+}
+
+.dark .nav-item {
+  background-color: #2F4F4F;
+}
+
+.dark .register-btn {
+  background-color: #2F4F4F;
 }

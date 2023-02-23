@@ -1,6 +1,5 @@
 <%= render "shared/header" %>
 
-
 <div class="calender-bg">
   <div class="calendar-left">
     <%= month_calendar items: @items do |date, items| %>
@@ -60,3 +59,4 @@
   </div>
 
 </div>
+<%= content_for(:title, "カレンダー") %>

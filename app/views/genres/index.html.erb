@@ -3,8 +3,8 @@
 <div class="calender-bg">
   <div class="pie-left">
     <div class="calendar-heading">
-      <%= link_to "Previous",chart_path(month:@month.prev_month), class:"change-month" %>
-      <span class="calendar-title"><%= @month.strftime('%Y%B') %></span><%= link_to "Next",chart_path(month:@month.next_month), class:"change-month" %>
+      <%= link_to "Previous",genres_path(month:@month.prev_month), class:"change-month" %>
+      <span class="calendar-title"><%= @month.strftime('%Y%B') %></span><%= link_to "Next",genres_path(month:@month.next_month), class:"change-month" %>
     </div>
     <div class="pie-change-btn">
       <button type="button" class="pie-income-btn" id="income-btn">収入</button>
@@ -59,3 +59,4 @@
     </div>
   </div>
 </div>
+<%= content_for(:title, "円グラフ") %>

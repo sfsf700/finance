@@ -1,45 +1,4 @@
 <%= render "shared/header" %>
 
-<div class="wrap-new">
-  <%= form_with model: @record, id: 'finance_form', class: "finance_post", local: true do |f| %>
-    <%= render 'shared/error_messages', model: f.object %>
-    <div class="change-btn">
-      <%= f.label :form_income, '収入',class:"income-btn", value:1, id: "incomeButton" %>
-      <%= f.label :form_spending, '支出', class:"spending-btn", value:2, id: "spendingButton" %>
-      <%= f.hidden_field :colum, value: 2, name: "record[status]" %>
- 
-    </div>
-
-    <div class="wrap-form-contents">
-      <label for="formDate" class="form-label">日付</label><br>
-      <%= f.date_field :r_date, class:"form-control", id:"formDate", value: Time.now.strftime("%Y-%m-%d") %>
-    </div>
-
-    <div class="wrap-form-contents">
-      <label for="formGenre" class="form-label">カテゴリー</label><br>
-      <%= f.collection_select :genre_id, @genres, :id, :g_name, {include_blank: "---"} ,class:"form-control", id: "formGenre" %>
-    </div>
-
-    <div class="wrap-form-contents">
-      <label for="formPrice" class="form-label">金額</label><br>
-      <%= f.text_field :price, class:"form-control", id:"formPrice"%>
-    </div>
-
-    <div class="wrap-form-contents">
-      <label for="formMemo" class="form-label">メモ</label><br>
-      <%= f.text_area :memo, class:"form-control", id:"formMemo", placeholder: "品名など" %>
-    </div>
-
-    <div class="wrap-form-contents">
-      <div class="d-flex">
-        <a href="/genres/new" class="add-category">カテゴリーを追加する</a>
-      </div>
-    </div>
-  
-    <div class="mt-1">
-      <div class="wrap-form-submit">
-        <%= f.submit '保存',  class:"register-btn" %>
-      </div>
-    </div>
-  <% end %>
-</div>
+<%= render "shared/record_form" %>
+<%= content_for(:title, "収支登録") %>

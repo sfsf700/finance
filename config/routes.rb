@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   root to: "records#new"
   resources :users, only:  [:edit, :update]
   resources :records, only: [:index, :new, :create, :edit, :update, :destroy]
-  resources :genres, only: [:new, :create, :destroy]
+  resources :genres, only: [:index, :new, :create, :destroy]
   get 'setting', action: :setting, controller: 'genres'
-  get 'chart', action: :chart, controller: 'genres'
   get 'csv', action: :csv, controller: 'genres'
 end

@@ -21,7 +21,7 @@ class GenresController < ApplicationController
     
   end
 
-  def chart
+  def index
 
     @month = params[:month] ? Date.parse(params[:month]) : Time.zone.today
 

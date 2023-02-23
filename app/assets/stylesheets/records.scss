@@ -166,6 +166,11 @@
   color: black;
 }
 
+.change-month:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
 .calender-bg {
   display: flex;
 }
