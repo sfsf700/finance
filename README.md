@@ -1,25 +1,29 @@
 # アプリケーション名
-Finance
+Mocha家計簿
 
 # アプリケーション概要
 
-スマホで使うことを想定した家計簿アプリ。
-何についてお金が動いたのか、ユーザーが自由にカテゴリーわけすることができる。
-また月間や年間といった条件で、収支を表示させ、確認することができる。
-収支をカレンダーや円グラフで使用して表示させるようにする。
+いわゆる家計簿がつけれるアプリケーション
+
+いつ、何が、どのくらいお金が動いたのかを可視化する。
+収支を登録することにより、月毎や日毎にどのくらいお金が動いたか計算する。
+ユーザーが自由にカテゴリーわけすることができる。
+そのカテゴリー分けしたもので、カテゴリー別にお金の動きを見ることができる。
+
 
 # 開発理由
 
-Railsの理解をより深めるため、使用したことのないgemや技術を使用しアプリ開発したかった。
-今回、可読性やメンテナンス性も意識してコードを記述する。
-またスマホを想定した画面設計をする。
+何にどのくらいお金を使っているのか、不透明になっていた。
+そのため、お金のコントロールができず、お金の使い方がルーズになっていた。
+このアプリを使用することで、何どのくらいお金を使っているのか可視化できるようになる。
+具体的な数字で管理することで、ルーズな使い方にならないようになるのではと考え、開発に至りました。
 
 
 # Development Environment(local)
 
-Ruby 2.6.8
-Rails 6.06
-MySQL 5.6.51
+Ruby 2.6.8<br>
+Rails 6.0.6<br>
+MySQL 5.6.51<br>
 
 
 # users table
@@ -32,8 +36,8 @@ MySQL 5.6.51
 
 
 ## Association
- has_many :records
- has_many :genres
+has_many :records<br>
+has_many :genres
 
 
 ## record table
@@ -42,12 +46,13 @@ MySQL 5.6.51
 | -------- | ---------- | ------------------------------ |
 | price    | integer    | null: false                    |
 | memo     | string     | null: false                    |
-| f_date   | time       | null: false                    |
+| r_date   | time       | null: false                    |
 | genre_id | references | null: false                    |
 | user_id  | references | null: false, foreign_key: true | 
 
 ## Association
- belongs_to :user
+belongs_to :user<br>
+belongs_to :genre
 
 ## genres table
 
@@ -57,6 +62,5 @@ MySQL 5.6.51
 | user_id | references | null: false, foreign_key: true | 
 
 ## Association
- belongs_to :user
- bas_one :record
-
+belongs_to :user<br>
+has_many :records, dependent: :destroy
