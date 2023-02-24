@@ -1,7 +1,7 @@
 <header class="top">
   <div class="site-header">
-    <div class="site-title">Mocha家計簿</div>
-    <div><%= link_to current_user.name + "さん", edit_user_path(current_user.name), class: "user-name", "data-turbolinks": false %></div>
+    <div class="site-title"><%= image_tag "mocha_finance.png", class: "mocha_finance" %></div>
+    <div class="site-right"><%= link_to current_user.name + "さん", edit_user_path(current_user.name), class:"user-name", "data-turbolinks": false %></div>
   </div>
 </header>
 <nav class="menu-wrap">

@@ -87,12 +87,16 @@
 
 /* header/user-name */
 
-.user-name {
-  font-size: 22px;
-  text-decoration: none;
-  color: black;
+.site-right {
+  font-size: 28px;
   padding: 0.8rem;
   display: block;
+}
+
+.user-name {
+  text-decoration: none;
+  vertical-align: middle;
+  color: black;
 }
 
 .my-finance-user {
@@ -107,6 +111,17 @@
   .app_logo {
     width: 20%;
     margin: 20px auto;
+  }
+
+  .site-right {
+    font-size: 14px;
+    padding: 0.4rem;
+    display: block;
+  }
+
+  a.user-name {
+    font-size: 14px;
+    padding: 0.4rem;
   }
 
   .fs-20 {
@@ -137,4 +152,26 @@
     text-decoration: none;
   }
 
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .new_user {
+    width: 40%;
+  }
+
+  .user-form-submit {
+    width: 60%;
+  }
+
+  .cancel-btn {
+    width: 60%;
+  }
+
+  .user-update-cancel {
+    padding: 15px;
+  }
+
+  .login_transition {
+    font-size: 20px;
+  }
 }
