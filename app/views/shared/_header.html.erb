@@ -1,22 +1,22 @@
 <header class="top">
   <div class="site-header">
-    <div class="site-title">俺の家計簿</div>
+    <div class="site-title">Mocha家計簿</div>
     <div><%= link_to current_user.name + "さん", edit_user_path(current_user.name), class: "user-name", "data-turbolinks": false %></div>
   </div>
 </header>
 <nav class="menu-wrap">
   <ul class="nav-wrap">
     <li class="nav-item">
-      <a class="nav-link" href="/" data-turbolinks= false><i class="fa-solid fa-pen"><br>入力</i></a>
+      <%= link_to root_path, class:"nav-link", "data-turbolinks": false do %><i class="fa-solid fa-pen"><br>入力</i><% end %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/records" data-turbolinks= false><i class="fa-solid fa-calendar"><br>カレンダー</i></a>
+      <%= link_to records_path, class:"nav-link", "data-turbolinks": false do %><i class="fa-solid fa-calendar"><br>カレンダー</i><% end %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/genres" data-turbolinks= false><i class="fa-solid fa-database"><br>円グラフ</i></a>
+      <%= link_to genres_path, class:"nav-link", "data-turbolinks": false do %><i class="fa-solid fa-database"><br>円グラフ</i><% end %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/setting" data-turbolinks= false><i class="fa-solid fa-gear"><br>設定</i></a>
+      <%= link_to setting_path, class:"nav-link",  "data-turbolinks": false  do %><i class="fa-solid fa-gear"><br>設定</i><% end %>
     </li>
   </ul>
 </nav>

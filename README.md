@@ -27,6 +27,7 @@ MySQL 5.6.51<br>
 
 
 # users table
+ユーザーテーブル
 
 | Column             | Type    | Options                   |
 | ------------------ | ------- | ------------------------- |
@@ -41,20 +42,23 @@ has_many :genres
 
 
 ## record table
+収支保存テーブル
 
 | Column   | Type       | Options                        |
 | -------- | ---------- | ------------------------------ |
 | price    | integer    | null: false                    |
-| memo     | string     | null: false                    |
+| memo     | string     |                                |
 | r_date   | time       | null: false                    |
-| genre_id | references | null: false                    |
+| genre_id | references | null: false, foreign_key: true |
 | user_id  | references | null: false, foreign_key: true | 
+| status   | integer    | null: false                    |
 
 ## Association
 belongs_to :user<br>
 belongs_to :genre
 
 ## genres table
+カテゴリーテーブル
 
 | Column  | Type       | Options                        |
 | ------- | ---------- | ------------------------------ |

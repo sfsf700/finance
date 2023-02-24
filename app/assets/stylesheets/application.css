@@ -122,3 +122,8 @@ hr {
 input, select {
     vertical-align:middle;
 }
+
+.menu-wrap {
+    position: sticky;
+    top: 0;
+}
