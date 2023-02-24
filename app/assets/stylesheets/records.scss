@@ -245,3 +245,99 @@
   color: black;
 }
 
+@media (max-width: 599px) {
+
+  .finance_post {
+    margin-top: 60px;
+  }
+
+  .site-title {
+    font-size: 16px;
+    padding: 0.4rem;
+  }
+
+  a.user-name {
+    font-size: 16px;
+    padding: 0.4rem;
+  }
+
+  .nav-item {
+    padding: 5px;
+  }
+
+  .nav-link {
+    font-size: 10px;
+  }
+
+  .wrap-new {
+    width: 70%;
+  }
+
+  .change-btn {
+    width: 50%;
+    padding: 5px;
+    margin: 15px auto;
+  }
+
+  .wrap-form-contents {
+    margin: 15px 0;
+  }
+
+  .form-label {
+    font-size: 14px;
+  }
+
+  .form-control {
+    height: 2.2rem;
+    font-size: 16px;
+  }
+
+  .d-flex {
+    width: 70%;
+    margin-top: 50px;
+  }
+
+  .add-category {
+    font-size: 14px;
+    padding: 15px;
+    width: 100%;
+  }
+
+  .wrap-form-submit {
+    width: 70%;
+  }
+
+  .register-btn {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+
+  .calender-bg {
+    display: block;
+  } 
+
+  .calendar-left {
+    font-size: 60%;
+  }
+
+  .simple-calendar table.table-striped {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .simple-calendar td.day {
+    height: 50px;
+  }
+
+  .finance-total {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px 0;
+  }
+
+  .record-contents {
+    width: 90%;
+  }
+
+}

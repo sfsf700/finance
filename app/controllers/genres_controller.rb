@@ -1,8 +1,6 @@
 class GenresController < ApplicationController
   require 'csv'
-  before_action :authenticate_user!
-
-
+  
   def new
     @genres = Genre.where(user_id: current_user.id)
     @genre = Genre.new

@@ -1,14 +1,14 @@
 <header class="top">
   <div class="site-header">
     <div class="site-title">俺の家計簿</div>
-    <div><%= link_to current_user.name + "さん", "#", class: "user-name" %></div>
+    <div><%= link_to current_user.name + "さん", "#", class: "user-name", "data-turbolinks": false %></div>
   </div>
 </header>
 <div>
   <div class="page-header">
     <div class="logo"><%= image_tag "f_logo.png", class: "app_logo" %></div>
     <div class="create-account">
-      <h2 class="fs-60">アカウント編集</h2>
+      <h2 class="fs-20">アカウント編集</h2>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
       <%= f.submit "更新", class:"user-login" %>
     </div>
     <div class="cancel-btn">
-      <%= link_to 'キャンセル', root_path, class: "user-update-cancel" %>
+      <%= link_to 'キャンセル', root_path, class: "user-update-cancel", "data-turbolinks": false %>
     </div>
   <% end %>
 </div>

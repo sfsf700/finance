@@ -1,5 +1,5 @@
 class RecordsController < ApplicationController
-  before_action :authenticate_user!
+  
   before_action :set_genres, only: [:new, :create, :edit]
   before_action :set_params, only: [:edit, :update, :destroy]
 

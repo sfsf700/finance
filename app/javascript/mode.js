@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded',function(){
   const body = document.querySelector('body');
   const darkModeBtn = document.getElementById('ore-mode');
-  
+
   var mode = sessionStorage.getItem('mode');
   if (mode == 'dark') {
     body.classList.add('dark');

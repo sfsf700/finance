@@ -1,4 +1,9 @@
 /* genres/new.html */
+@media(min-width: 600px) {
+  .media-smart {
+    display: none;
+  }
+}
 
 .category-page {
   display: flex;
@@ -271,4 +276,98 @@
 
 .dark .register-btn {
   background-color: #2F4F4F;
+}
+
+@media (max-width: 599px) {
+
+  .pie-left {
+    width: 100%;
+  }
+
+  .pie-change-btn {
+    width: 50%;
+    padding: 5px;
+    margin: 10px auto;
+  }
+
+  .chart-graph {
+    padding: 30px 0;
+  }
+
+  .pie-right {
+    width: 100%;
+  }
+
+  .chart-contents {
+    width: 90%;
+  }
+
+  .setting-contents {
+    width: 100%;
+  }
+
+  .setting-title {
+    font-size: 20px;
+    margin: 30px 0;
+  }
+  .category-content {
+    font-size: 18px;
+    margin: 5px 0;
+    padding: 5px;
+  } 
+
+  .category-page {
+    display: block;
+  }
+
+  .category-page-left {
+    width: 100%;
+  }
+
+  .category-page-right {
+    width: 100%;
+  }
+
+  .media-pc {
+    display: none;
+  }
+
+  .new-category-add {
+    font-size: 20px;
+    padding-top: 50px;
+  }
+
+  .category-form {
+    width: 70%;
+    margin: 0 auto;
+    padding: 15px 0;
+  }
+
+  .csv-top {
+    width: 90%;
+  }
+
+  .all-finance {
+    font-size: 14px;
+  }
+
+  .csv-export {
+    font-size: 14px;
+  }
+
+  .all-finance-index {
+    width: 90%;
+  }
+
+  .td-finance {
+    font-size: 90%;
+  }
+  .finance-table {
+    font-size: 90%;
+  }
+
+  .sp-nav {
+    width: 80%;
+  }
+
 }
