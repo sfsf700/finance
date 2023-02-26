@@ -28,7 +28,7 @@
         </div>
          <div>
           <div>合計</div>
-          <div><%= (@select_income - @select_spending).to_s(:delimited) %>円</div>
+          <div><%= calculation(@select_income, @select_spending).to_s(:delimited) %>円</div>
         </div>
       </div>
     </div>
