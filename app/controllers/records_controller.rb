@@ -29,17 +29,17 @@ class RecordsController < ApplicationController
       select_beg_day = simplecalendar.to_date.beginning_of_month
       select_end_day = simplecalendar.to_date.end_of_month
 
-      @records = Record.includes(:user).order('r_date DESC').where(user_id: current_user.id).where(r_date: select_beg_day..select_end_day)
-      @select_income = Record.where(status: 2).where(user_id: current_user.id).where(r_date: select_beg_day..select_end_day).sum(:price) ## 収入
-      @select_spending = Record.where(status: 1).where(user_id: current_user.id).where(r_date: select_beg_day..select_end_day).sum(:price) ## 支出
+      @records = Record.includes(:user).order('fdate DESC').where(user_id: current_user.id).where(fdate: select_beg_day..select_end_day)
+      @select_income = Record.where(status: 2).where(user_id: current_user.id).where(fdate: select_beg_day..select_end_day).sum(:price) ## 収入
+      @select_spending = Record.where(status: 1).where(user_id: current_user.id).where(fdate: select_beg_day..select_end_day).sum(:price) ## 支出
     else
-      @records = Record.includes(:user).order('r_date DESC').where(user_id: current_user.id).where(r_date: sta..end_day)
-      @select_income = Record.where(status: 2).where(user_id: current_user.id).where(r_date: sta..end_day).sum(:price) ## 収入
-      @select_spending = Record.where(status: 1).where(user_id: current_user.id).where(r_date: sta..end_day).sum(:price) ## 支出
+      @records = Record.includes(:user).order('fdate DESC').where(user_id: current_user.id).where(fdate: sta..end_day)
+      @select_income = Record.where(status: 2).where(user_id: current_user.id).where(fdate: sta..end_day).sum(:price) ## 収入
+      @select_spending = Record.where(status: 1).where(user_id: current_user.id).where(fdate: sta..end_day).sum(:price) ## 支出
     end
 
-    @incomes = Record.all.where(user_id: current_user.id).where(status: 2).group(:r_date).sum(:price)
-    @spendings = Record.all.where(user_id: current_user.id).where(status: 1).group(:r_date).sum(:price)
+    @incomes = Record.all.where(user_id: current_user.id).where(status: 2).group(:fdate).sum(:price)
+    @spendings = Record.all.where(user_id: current_user.id).where(status: 1).group(:fdate).sum(:price)
     @total = @incomes.merge(@spendings){|key, v1, v2| v1 + v2}
     @items = @total.merge(@spendings){|key, v1, v2| v1 - v2 - v2}
   end
@@ -69,7 +69,7 @@ class RecordsController < ApplicationController
 
   private 
   def record_params
-    params.require(:record).permit(:memo, :price, :genre_id, :r_date, :status).merge(user_id: current_user.id)
+    params.require(:record).permit(:memo, :price, :genre_id, :fdate, :status).merge(user_id: current_user.id)
   end
 
   def set_params

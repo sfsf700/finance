@@ -10,7 +10,7 @@
 
     <div class="wrap-form-contents">
       <label for="formDate" class="form-label">日付</label><br>
-      <%= f.date_field :r_date, class:"form-control", id:"formDate", value: @record.r_date ? params[:r_date] : Date.today.strftime("%Y-%m-%d") %>
+      <%= f.date_field :fdate, class:"form-control", id:"formDate", value: @record.fdate ? params[:fdate] : Time.now.strftime("%Y-%m-%d") %>
     </div>
 
     <div class="wrap-form-contents">

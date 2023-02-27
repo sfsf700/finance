@@ -41,13 +41,13 @@
         <%= link_to edit_record_path(record.id), class:"edit-record", method: :get do %>
           <% if record.status == 2 %>
             <div class="record-content bg-income">
-              <div class="record-date"><%= record.r_date.strftime('%m月%d日') %></div>
+              <div class="record-date"><%= record.fdate.strftime('%m月%d日') %></div>
               <div class="record-genre"><%= record.genre.g_name%></div>
               <div class="record-price"><%= record.price.to_s(:delimited) %>円</div>
             </div>
           <% else %>
             <div class="record-content">
-              <div class="record-date"><%= record.r_date.strftime('%m月%d日') %></div>
+              <div class="record-date"><%= record.fdate.strftime('%m月%d日') %></div>
               <div class="record-genre"><%= record.genre.g_name%></div>
               <div class="record-price"><%= record.price.to_s(:delimited) %>円</div>
             </div>

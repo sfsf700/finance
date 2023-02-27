@@ -49,7 +49,7 @@ RSpec.describe Record, type: :model do
       end
 
       it '日付が空では保存できない' do
-        @record.r_date = ""
+        @record.fdate = ""
         @record.valid?
         expect(@record.errors.full_messages).to include("R date can't be blank")
       end
