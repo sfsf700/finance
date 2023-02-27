@@ -16,14 +16,14 @@
     <% @records.each do |income| %>
       <% if income.status == 1%>
         <tr>
-          <td class="td-finance"><%= income.r_date.strftime('%m月%d日') %></td>
+          <td class="td-finance"><%= income.fdate.strftime('%m月%d日') %></td>
           <td class="td-finance"><%= income.status = "支出" %></td>
           <td class="td-finance"><%= income.genre.g_name%></td>
           <td class="td-price"><%= income.price.to_s(:delimited) %>円</td>
         </tr>
       <% else %>
         <tr>
-          <td class="td-finance"><%= income.r_date.strftime('%m月%d日') %></td>
+          <td class="td-finance"><%= income.fdate.strftime('%m月%d日') %></td>
           <td class="td-finance"><%= income.status = "収入" %></td>
           <td class="td-finance"><%= income.genre.g_name%></td>
           <td class="td-price"><%= income.price.to_s(:delimited) %>円</td>
