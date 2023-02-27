@@ -2,7 +2,7 @@ window.addEventListener('load', function() {
 
   const spendingButton = document.getElementById('spendingButton')
   const incomeButton = document.getElementById('incomeButton')
-  const colum = document.getElementById('record_colum')
+  //const colum = document.getElementById('record_colum')
   const statusForm = document.getElementById('status-form')
   if (spendingButton == null) return
 
@@ -21,16 +21,16 @@ window.addEventListener('load', function() {
   spendingButton.addEventListener('click', function() {
     this.setAttribute("style", "background-color: white;")
     incomeButton.setAttribute("style", "background-color: darkgray;")
-    colum.setAttribute("name", "record[status]")
-    colum.setAttribute("value", "1")
+    //colum.setAttribute("name", "record[status]")
+    statusForm.setAttribute("value", "1")
   });
 
 
   incomeButton.addEventListener('click', function() {
     this.setAttribute("style", "background-color: white;")
     spendingButton.setAttribute("style", "background-color: darkgray;")
-    colum.setAttribute("name", "record[status]")
-    colum.setAttribute("value", "2")
+    //colum.setAttribute("name", "record[status]")
+    statusForm.setAttribute("value", "2")
   });
 
 });
