@@ -10,17 +10,17 @@
 
     <div class="wrap-form-contents">
       <label for="formDate" class="form-label">日付</label><br>
-      <%= f.date_field :fdate, class:"form-control", id:"formDate", value: @record.fdate ? params[:fdate] : Time.now.strftime("%Y-%m-%d") %>
+      <%= f.date_field :fdate, class:"form-control", id:"formDate", value: @record.fdate ? params[:fdate] : Time.now.strftime("%Y-%m-%d"), required: true %>
     </div>
 
     <div class="wrap-form-contents">
       <label for="formGenre" class="form-label">カテゴリー</label><br>
-      <%= f.collection_select :genre_id, @genres, :id, :g_name, {include_blank: "---"} ,class:"form-control", id: "formGenre" %>
+      <%= f.collection_select :genre_id, @genres, :id, :g_name, {include_blank: "---"} ,class:"form-control", id: "formGenre", required: true %>
     </div>
 
     <div class="wrap-form-contents">
       <label for="formPrice" class="form-label">金額</label><br>
-      <%= f.text_field :price, class:"form-control", id:"formPrice", oninput:"value = onlyNumbers(value)" %>
+      <%= f.text_field :price, class:"form-control", id:"formPrice", oninput:"value = onlyNumbers(value)", required: true %>
     </div>
 
     <div class="wrap-form-contents">
