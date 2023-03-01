@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'users/update'
   devise_for :users
   root to: "records#new"
-  resources :users, param: :name, path: "/", only:  [:edit, :update]
+  resources :users, param: :name, path: "/", only:  [:edit, :update, :destroy]
   resources :records, only: [:index, :new, :create, :edit, :update, :destroy]
   resources :genres, only: [:index, :new, :create, :destroy]
   get 'setting', action: :setting, controller: 'genres'

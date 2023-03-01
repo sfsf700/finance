@@ -2,8 +2,8 @@
   <%= form_with model: @record, id: 'finance_form', class: "finance_post", local: true do |f| %>
     <%= render 'shared/error_messages', model: f.object %>
     <div class="change-btn">
-      <%= f.label :form_income, '収入',class:"income-btn", value:1, id: "incomeButton" %>
       <%= f.label :form_spending, '支出', class:"spending-btn", value:2, id: "spendingButton" %>
+      <%= f.label :form_income, '収入',class:"income-btn", value:1, id: "incomeButton" %>
       <%= f.hidden_field :status, value: @record.status, name: "record[status]",  id: "status-form"%>
  
     </div>

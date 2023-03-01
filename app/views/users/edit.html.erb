@@ -27,7 +27,10 @@
       <%= f.submit "更新", class:"user-login" %>
     </div>
     <div class="cancel-btn">
-      <%= link_to 'キャンセル', root_path, class: "user-update-cancel", "data-turbolinks": false %>
+      <%= link_to '戻る', setting_path, class: "user-update-cancel", "data-turbolinks": false %>
+    </div>
+    <div class="cancel-btn">
+      <%= link_to 'アカウント削除', user_path(current_user.id), class: "account-btn", method: :delete, data: {confirm: "これまでの収支が全て削除されます。本当にいいですか？"}%>
     </div>
   <% end %>
 </div>

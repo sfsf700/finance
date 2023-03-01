@@ -61,7 +61,7 @@
 .income-btn {
   font-size: 20px;
   color: black;
-  background-color: white;
+  
   border-radius: 5px;
   padding: 5px;
   width: 100%;
@@ -72,6 +72,7 @@
 .spending-btn {
   font-size: 20px;
   color: black;
+  background-color: white;
   padding: 5px;
   border-radius: 5px;
   width: 100%;
@@ -262,7 +263,7 @@
   }
 
   .mocha_finance {
-    width: 25%;
+    width: 40%;
   }
 
   .nav-item {

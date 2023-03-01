@@ -88,23 +88,40 @@
 /* header/user-name */
 
 .site-right {
-  font-size: 28px;
+  font-size: 24px;
   padding: 0.8rem;
-  display: block;
+  margin: auto 0;
 }
 
 .user-name {
   text-decoration: none;
-  vertical-align: middle;
   color: black;
 }
 
 .my-finance-user {
-  font-size: 22px;
+  font-size: 24px;
   text-decoration: none;
   color: red;
+}
+
+.account-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login-btn {
   padding: 0.8rem;
-  display: block;
+  margin: auto 0;
 }
 
 @media (max-width: 599px) {
@@ -160,7 +177,7 @@
 
 @media (min-width: 600px) and (max-width: 1024px) {
   .new_user {
-    width: 40%;
+    width: 30%;
   }
 
   .user-form-submit {

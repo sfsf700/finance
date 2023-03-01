@@ -1,7 +1,7 @@
 <header class="top">
   <div class="site-header">
     <div class="site-title"><%= image_tag "mocha_finance.png", class: "mocha_finance" %></div>
-    <div><%= link_to 'ログインはこちら', user_session_path, class: "my-finance-user" %></div>
+    <div class="login-btn"><%= link_to 'ログインはこちら', user_session_path, class: "my-finance-user" %></div>
   </div>
 </header>
 <div>
@@ -12,21 +12,20 @@
     </div>
   </div>
 
-
   <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
   
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="field">
       <%= f.label :name, class:"form-label" %><br />
-      <%= f.text_field :name , class:"form-control" , maxlength: "20" %>
+      <%= f.text_field :name , class:"form-control" , maxlength: "20", placeholder: "例) mocha (20文字以内)" %>
     </div>
     <div class="field">
       <%= f.label :email, class:"form-label" %><br />
-      <%= f.email_field :email, class:"form-control"%>
+      <%= f.email_field :email, class:"form-control", placeholder: "例) mocha@test.com "%>
     </div>
     <div class="field">
-      <%= f.label :"Password", class:"form-label" %><br />
-      <%= f.password_field :password, class:"form-control", autocomplete: "off" %>
+      <%= f.label :"Password(半角英数字6文字以上)", class:"form-label" %><br />
+      <%= f.password_field :password, class:"form-control", autocomplete: "off", placeholder: "例) test717(英数字は各1文字必要です。)"%>
     </div>
     <div class="field">
       <%= f.label :"Password(Confirmation)", class:"form-label" %><br />
