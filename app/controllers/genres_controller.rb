@@ -57,7 +57,7 @@ class GenresController < ApplicationController
   private
 
   def genre_params
-    params.require(:genre).permit(:g_name).merge(user_id: current_user.id)
+    params.require(:genre).permit(:g_name, :status).merge(user_id: current_user.id)
   end
 
 

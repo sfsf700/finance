@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'}
   get 'users/edit'
   get 'users/update'
-  devise_for :users
+
   root to: "records#new"
   resources :users, param: :name, path: "/", only:  [:edit, :update, :destroy]
   resources :records, only: [:index, :new, :create, :edit, :update, :destroy]

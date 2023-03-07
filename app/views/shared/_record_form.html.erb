@@ -5,19 +5,19 @@
       <%= f.label :form_spending, '支出', class:"spending-btn", value:2, id: "spendingButton" %>
       <%= f.label :form_income, '収入',class:"income-btn", value:1, id: "incomeButton" %>
       <%= f.hidden_field :status, value: @record.status, name: "record[status]",  id: "status-form"%>
- 
     </div>
-
+    
     <div class="wrap-form-contents">
       <label for="formDate" class="form-label">日付</label><br>
       <%= f.date_field :fdate, class:"form-control", id:"formDate", value: @record.fdate ? params[:fdate] : Time.now.strftime("%Y-%m-%d"), required: true %>
     </div>
 
-    <div class="wrap-form-contents">
-      <label for="formGenre" class="form-label">カテゴリー</label><br>
-      <%= f.collection_select :genre_id, @genres, :id, :g_name, {include_blank: "---"} ,class:"form-control", id: "formGenre", required: true %>
+    <div class="wrap-form-contents" id="genres_spending">
+      <label for="form_genre_spending" class="form-label" >カテゴリー</label><br>
+      <%= f.collection_select :genre_id, @genres.where(status: 1), :id, :g_name, {include_blank: "---"} ,class:"form-control spen", id: "form_genre_spending", required: true %>
+      <%= f.collection_select :genre_id, @genres.where(status: 2), :id, :g_name, {include_blank: "---"} ,class:"form-control inco", id: "form_genre_income", required: true %>
     </div>
-
+    
     <div class="wrap-form-contents">
       <label for="formPrice" class="form-label">金額</label><br>
       <%= f.text_field :price, class:"form-control", id:"formPrice", oninput:"value = onlyNumbers(value)", required: true %>
@@ -45,4 +45,34 @@
 const onlyNumbers = n => {
   return n.replace(/[０-９]/g,s => String.fromCharCode(s.charCodeAt(0) - 65248)).replace(/\D/g,'');
 }
+</script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+  var i;
+  var s
+  if ($("#status-form").attr("value") == 1) {
+    i = $("#form_genre_income").remove()
+  }
+  
+  if ($("#status-form").attr("value") == 2) {
+    s = $("#form_genre_spending").remove()
+  }
+
+  $("#spendingButton").on("click", function() {
+
+    i = $("#form_genre_income").remove();
+    $("#genres_spending").append(s);
+  });
+
+  $("#incomeButton").on("click", function() {
+
+    s = $("#form_genre_spending").remove();
+    $("#genres_spending").append(i);
+
+  });
+ 
+});
+
 </script>
