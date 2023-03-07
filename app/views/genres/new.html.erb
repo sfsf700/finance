@@ -13,7 +13,7 @@
           <div class="change-btn">
             <%= f.label :form_spending, '支出', class:"spending-btn", value:1, id: "spendingButton" %>
             <%= f.label :form_income, '収入',class:"income-btn", value:2, id: "incomeButton" %>
-            <%= f.hidden_field :status, value: @genre.status, name: "genre[status]",  id: "status-form"%>
+            <%= f.hidden_field :status, value: 1, name: "genre[status]",  id: "status-form"%>
           </div>
           <label for="formGroup" class="form-label">カテゴリーの名前を入力</label>
           <%= f.text_field :g_name, class: "form-control", id: "formGroup", placeholder: "例) 俺の食費" %>

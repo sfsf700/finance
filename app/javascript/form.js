@@ -3,7 +3,7 @@ window.addEventListener('load', function() {
   const spendingButton = document.getElementById('spendingButton')
   const incomeButton = document.getElementById('incomeButton')
   const statusForm = document.getElementById('status-form')
-  const genresSpending = document.getElementById('genres_spending')
+  //const genresSpending = document.getElementById('genres_spending')
   if (spendingButton == null) return
 
 
@@ -23,8 +23,6 @@ window.addEventListener('load', function() {
     incomeButton.setAttribute("style", "background-color: white;")
     
   }
-
- 
 
   spendingButton.addEventListener('click', function() {
     this.setAttribute("style", "background-color: white;")
