@@ -2,7 +2,8 @@ class GenresController < ApplicationController
   require 'csv'
   
   def new
-    @genres = Genre.where(user_id: current_user.id)
+    @genres_spending = Genre.where(user_id: current_user.id).where(status: 1)
+    @genres_income = Genre.where(user_id: current_user.id).where(status: 2)
     @genre = Genre.new
   end
 

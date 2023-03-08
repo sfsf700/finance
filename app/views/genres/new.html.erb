@@ -26,41 +26,77 @@
   </div>
 
   <div class="category-page-right media-pc">
-    <div class="new-category-head">
-      <div class="new-category">カテゴリー一覧</div>
-    </div>
-    <div class="chart-contents">
-      <% @genres.each do |genre| %>
-        <div class="record-content">
-          <div><%= genre.g_name %></div>
-          <div id="alert">
-            <%= link_to genre_path(genre.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
-              <i class="fa-regular fa-trash-can"></i>
-            <% end %>
+
+    <div id="category-spending" >
+      <div class="chart-contents" id="name-spending">
+        <div class="new-category">カテゴリー一覧(支出)</div>
+        <% @genres_spending.each do |g_spending| %>
+          <div class="record-content">
+            <div><%= g_spending.g_name %></div>
+            <div id="alert">
+              <%= link_to genre_path(g_spending.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
+                <i class="fa-regular fa-trash-can"></i>
+              <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+
+    <div id="category-income" >
+      <div class="chart-contents" id="name-income">
+        <div class="new-category">カテゴリー一覧(収入)</div>
+        <% @genres_income.each do |g_income| %>
+          <div class="record-content">
+            <div><%= g_income.g_name %></div>
+            <div id="alert">
+              <%= link_to genre_path(g_income.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
+                <i class="fa-regular fa-trash-can"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 
 
 
   <div class="category-page-right media-smart">
-    <div class="new-category-head">
-      <div class="new-category">カテゴリー一覧</div>
-    </div>
-    <div class="chart-contents">
-      <% @genres.each do |genre| %>
-        <div class="record-content">
-          <div><%= genre.g_name %></div>
-          <div id="alert">
-            <%= link_to genre_path(genre.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
-              <i class="fa-regular fa-trash-can"></i>
-            <% end %>
+
+    <div id="category-spending" >
+      <div class="chart-contents" id="name-spending">
+        <div class="new-category">カテゴリー一覧(支出)</div>
+        <% @genres_spending.each do |g_spending| %>
+          <div class="record-content">
+            <div><%= g_spending.g_name %></div>
+            <div id="alert">
+              <%= link_to genre_path(g_spending.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
+                <i class="fa-regular fa-trash-can"></i>
+              <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
+
+    <div id="category-income" >
+      <div class="chart-contents" id="name-income">
+        <div class="new-category">カテゴリー一覧(収入)</div>
+        <% @genres_income.each do |g_income| %>
+          <div class="record-content">
+            <div><%= g_income.g_name %></div>
+            <div id="alert">
+              <%= link_to genre_path(g_income.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
+                <i class="fa-regular fa-trash-can"></i>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 
   <div class="category-page-left media-smart">
@@ -83,3 +119,26 @@
 
 </div>
 <%= content_for(:title, "カテゴリー編集") %>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(function() {
+
+   $("#category-income").css("display", "none")
+
+  $("#spendingButton").on("click", function() {
+
+    $("#category-income").css("display", "none")
+    $("#category-spending").css("display", "inline")
+  })
+
+  $("#incomeButton").on("click", function() {
+
+    $("#category-spending").css("display", "none")
+    $("#category-income").css("display", "inline")
+
+  });
+ 
+});
+
+</script>
