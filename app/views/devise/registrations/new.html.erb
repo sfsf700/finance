@@ -24,11 +24,11 @@
       <%= f.email_field :email, class:"form-control", placeholder: "例) mocha@test.com "%>
     </div>
     <div class="field">
-      <%= f.label :"Password(半角英数字6文字以上)", class:"form-label" %><br />
-      <%= f.password_field :password, class:"form-control", autocomplete: "off", placeholder: "例) test717(英数字は各1文字必要です。)"%>
+      <%= f.label :"Password(半角英字、半角数字を各1文字以上必要です)", class:"form-label" %><br />
+      <%= f.password_field :password, class:"form-control", autocomplete: "off" %>
     </div>
     <div class="field">
-      <%= f.label :"Password(Confirmation)", class:"form-label" %><br />
+      <%= f.label :"Password(確認)", class:"form-label" %><br />
       <%= f.password_field :password_confirmation, class:"form-control", autocomplete: "off" %>
     </div>
     <div>

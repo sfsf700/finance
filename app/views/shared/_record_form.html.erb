@@ -52,27 +52,25 @@ $(function() {
 
   var i;
   var s;
-  if ($("#status-form").attr("value") == 1) {
-    i = $("#form_genre_income").remove()
-  }
-  
-  if ($("#status-form").attr("value") == 2) {
+  if ($("#status-form").attr("value") == null) {
     s = $("#form_genre_spending").remove()
   }
-
+  if ($("#status-form").attr("value") == "1") {
+    i = $("#form_genre_income").remove()
+  }
+  if ($("#status-form").attr("value") == "2") {
+    s = $("#form_genre_spending").remove()
+  }
   $("#spendingButton").on("click", function() {
-
+  
     i = $("#form_genre_income").remove();
     $("#genres_spending").append(s);
   });
-
   $("#incomeButton").on("click", function() {
-
+  
     s = $("#form_genre_spending").remove();
     $("#genres_spending").append(i);
-
   });
- 
 });
 
 </script>

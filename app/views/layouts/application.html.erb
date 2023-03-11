@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
+  <head prefix="og:http://ogp.me/ns#">
     <title><%= page_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="MochaFinance" />
+    <meta property="og:type" content="article"/>
+    <meta property="og:description" content="家計簿をつけてお金を上手にコントロールしてみませんか？"/>
+    <meta property="og:url" content="https://finance-mocha.onrender.com"/>
+    <meta name="keywords" content="ブログ,家計簿, Mocha ,mocha ,finance"/>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' , 'data-turbolinks-track': 'reload'%>
