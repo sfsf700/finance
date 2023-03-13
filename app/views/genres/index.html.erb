@@ -7,8 +7,8 @@
       <span class="calendar-title"><%= @month.strftime('%Y%B') %></span><%= link_to "Next",genres_path(month:@month.next_month), class:"change-month" %>
     </div>
     <div class="pie-change-btn">
-      <button type="button" class="pie-income-btn" id="income-btn">収入</button>
       <button type="button" class="pie-spending-btn" id="spending-btn">支出</button>
+      <button type="button" class="pie-income-btn" id="income-btn">収入</button>
     </div>
     <div class="chart-graph">
       <div class="spending-graph" id="pie_spending">
@@ -39,7 +39,7 @@
   <div class="pie-right">
    <div class="calendar-index">カテゴリー別一覧</div>
    <div class="chart-contents">
-      <div class="chart-each" id="pie_income_each">
+      <div class="chart-each income-graph" id="pie_income_each">
         <% @inc_total.each do |total| %>
         <div class="record-content">
           <div class="record-genre"><%= total[0]%></div>
@@ -48,7 +48,7 @@
         <% end %>
       </div>
 
-      <div class="chart-each spending-graph" id="pie_spending_each">
+      <div class="chart-each" id="pie_spending_each">
         <% @spe_total.each do |total| %>
         <div class="record-content">
           <div class="record-genre"><%= total[0]%></div>

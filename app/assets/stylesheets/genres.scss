@@ -61,7 +61,7 @@
 .pie-income-btn {
   font-size: 20px;
   color: black;
-  background-color: white;
+  background-color: darkgray;
   border-radius: 5px;
   padding: 5px;
   width: 60%;
@@ -78,11 +78,11 @@
   width: 60%;
   text-align: center;
   border: none;
-  background-color: darkgray;
+  background-color: white;
   cursor: pointer;
 }
 
-.spending-graph {
+.income-graph {
   display: none;
 }
 
@@ -321,7 +321,11 @@
     font-size: 18px;
     margin: 5px 0;
     padding: 5px;
-  } 
+  }
+
+  .category-income-wrap {
+    display: none;
+  }
 
   .category-page {
     display: block;
@@ -342,6 +346,8 @@
   .new-category-add {
     font-size: 20px;
     padding-top: 50px;
+    display: flex;
+    justify-content: center;
   }
 
   .category-form {

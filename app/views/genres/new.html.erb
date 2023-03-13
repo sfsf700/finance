@@ -11,8 +11,8 @@
       <div class="wrap-form-contents ">
         <div class="category-form">
           <div class="change-btn">
-            <%= f.label :form_spending, '支出', class:"spending-btn", value:1, id: "spendingButton" %>
-            <%= f.label :form_income, '収入',class:"income-btn", value:2, id: "incomeButton" %>
+            <%= f.label :form_spending, '支出', class:"spending-btn", value:1, id: "spendingSwitch" %>
+            <%= f.label :form_income, '収入',class:"income-btn", value:2, id: "incomeSwitch" %>
             <%= f.hidden_field :status, value: 1, name: "genre[status]",  id: "status-form"%>
           </div>
           <label for="formGroup" class="form-label">カテゴリーの名前を入力</label>
@@ -65,7 +65,7 @@
 
   <div class="category-page-right media-smart">
 
-    <div id="category-spending" >
+    <div class="category-spending-wrap" id="category-spending">
       <div class="chart-contents" id="name-spending">
         <div class="new-category">カテゴリー一覧(支出)</div>
         <% @genres_spending.each do |g_spending| %>
@@ -81,7 +81,7 @@
       </div>
     </div>
 
-    <div id="category-income" >
+    <div class="category-income-wrap" id="category-income">
       <div class="chart-contents" id="name-income">
         <div class="new-category">カテゴリー一覧(収入)</div>
         <% @genres_income.each do |g_income| %>
@@ -107,6 +107,11 @@
     
       <div class="wrap-form-contents ">
         <div class="category-form">
+          <div class="change-btn">
+            <%= f.label :form_spending, '支出', class:"spending-btn", value:1, id: "spendingSwitch" %>
+            <%= f.label :form_income, '収入',class:"income-btn", value:2, id: "incomeSwitch" %>
+            <%= f.hidden_field :status, value: 1, name: "genre[status]",  id: "status-form"%>
+          </div>
           <label for="formGroup" class="form-label">カテゴリーの名前を入力</label>
           <%= f.text_field :g_name, class: "form-control", id: "formGroup", placeholder: "例) 俺の食費" %>
         </div>
@@ -126,17 +131,22 @@ $(function() {
 
    $("#category-income").css("display", "none")
 
-  $("#spendingButton").on("click", function() {
+  $("#spendingSwitch").on("click", function() {
 
     $("#category-income").css("display", "none")
     $("#category-spending").css("display", "inline")
+    $("#spendingSwitch").css("background-color", "white")
+    $("#incomeSwitch").css("background-color", "darkgray")
+    $("#status-form").val(1)
   })
 
-  $("#incomeButton").on("click", function() {
+  $("#incomeSwitch").on("click", function() {
 
     $("#category-spending").css("display", "none")
     $("#category-income").css("display", "inline")
-
+    $("#spendingSwitch").css("background-color", "darkgray")
+    $("#incomeSwitch").css("background-color", "white")
+    $("#status-form").val(2)
   });
  
 });
