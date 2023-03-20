@@ -64,12 +64,17 @@ belongs_to :genre
 | ------- | ---------- | ------------------------------ |
 | g_name  | string     | null: false                    |
 | user_id | references | null: false, foreign_key: true | 
+| status   | integer    | null: false                    |
 
 ## Association
 belongs_to :user<br>
 has_many :records, dependent: :destroy
 
 ## 使用マニュアル
+
+【テストアカウント】
+name・・・test
+password・・・test717
 
 まず、新規会員登録をします。<br>
 任意の名前、アドレス、パスワードを入力して『Sing up』をクリック。<br>
@@ -88,3 +93,5 @@ has_many :records, dependent: :destroy
 
 家計簿の根幹機能は以上です。<br>
 設定からcsvファイル出力や背景色を変更することもできます。
+
+※renderの無料デプロイの使用上、最初のアクセスに時間がかかることがあります。
