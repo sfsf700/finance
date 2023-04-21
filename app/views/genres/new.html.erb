@@ -15,8 +15,7 @@
             <%= f.label :form_income, '収入',class:"income-btn", value:2, id: "incomeSwitch" %>
             <%= f.hidden_field :status, value: 1, name: "genre[status]",  id: "status-form"%>
           </div>
-          <label for="formGroup" class="form-label">カテゴリーの名前を入力</label>
-          <%= f.text_field :g_name, class: "form-control", id: "formGroup", placeholder: "例) 俺の食費" %>
+          <%= f.text_field :g_name, class: "form-control", id: "formGroup" %>
         </div>
       </div>
       <div class="wrap-form-submit">
@@ -34,7 +33,7 @@
           <div class="record-content">
             <div><%= g_spending.g_name %></div>
             <div id="alert">
-              <%= link_to genre_path(g_spending.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
+              <%= link_to genre_path(g_spending.id), method: :delete ,  data: { confirm: "関連するデータが全て消えてしまいます。本当によろしいですか?" } do %>
                 <i class="fa-regular fa-trash-can"></i>
               <% end %>
             </div>
@@ -50,7 +49,7 @@
           <div class="record-content">
             <div><%= g_income.g_name %></div>
             <div id="alert">
-              <%= link_to genre_path(g_income.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
+              <%= link_to genre_path(g_income.id), method: :delete ,  data: { confirm: "関連するデータが全て消えてしまいます。本当によろしいですか?" } do %>
                 <i class="fa-regular fa-trash-can"></i>
               <% end %>
             </div>
@@ -72,7 +71,7 @@
           <div class="record-content">
             <div><%= g_spending.g_name %></div>
             <div id="alert">
-              <%= link_to genre_path(g_spending.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
+              <%= link_to genre_path(g_spending.id), method: :delete ,  data: { confirm: "関連するデータが全て消えてしまいます。本当によろしいですか?" } do %>
                 <i class="fa-regular fa-trash-can"></i>
               <% end %>
             </div>
@@ -88,7 +87,7 @@
           <div class="record-content">
             <div><%= g_income.g_name %></div>
             <div id="alert">
-              <%= link_to genre_path(g_income.id), method: :delete ,  data: { confirm: "関連するデータが全て消えるぞ。本当にいいのか?" } do %>
+              <%= link_to genre_path(g_income.id), method: :delete ,  data: { confirm: "関連するデータが全て消えてしまいます。本当によろしいですか?" } do %>
                 <i class="fa-regular fa-trash-can"></i>
               <% end %>
             </div>
@@ -112,8 +111,7 @@
             <%= f.label :form_income, '収入',class:"income-btn", value:2, id: "incomeSwitch" %>
             <%= f.hidden_field :status, value: 1, name: "genre[status]",  id: "status-form"%>
           </div>
-          <label for="formGroup" class="form-label">カテゴリーの名前を入力</label>
-          <%= f.text_field :g_name, class: "form-control", id: "formGroup", placeholder: "例) 俺の食費" %>
+          <%= f.text_field :g_name, class: "form-control", id: "formGroup"%>
         </div>
       </div>
       <div class="wrap-form-submit">
