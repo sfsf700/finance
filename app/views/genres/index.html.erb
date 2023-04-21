@@ -3,8 +3,8 @@
 <div class="calender-bg">
   <div class="pie-left">
     <div class="calendar-heading">
-      <%= link_to "Previous",genres_path(month:@month.prev_month), class:"change-month" %>
-      <span class="calendar-title"><%= @month.strftime('%Y%B') %></span><%= link_to "Next",genres_path(month:@month.next_month), class:"change-month" %>
+      <%= link_to "前月",genres_path(month:@month.prev_month), class:"change-month", "data-turbolinks": false %>
+      <span class="calendar-title"><%= @month.strftime('%B') %></span><%= link_to "次月",genres_path(month:@month.next_month), class:"change-month", "data-turbolinks": false %>
     </div>
     <div class="pie-change-btn">
       <button type="button" class="pie-spending-btn" id="spending-btn">支出</button>
